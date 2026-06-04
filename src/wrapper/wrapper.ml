@@ -86,10 +86,10 @@ module Tensor = struct
   ;;
 
   let copy_to_bigstring
-    ~src:t
-    ~dst:(b : (char, _, Bigarray.c_layout) Bigarray.Array1.t)
-    ~dst_pos
-    ~dst_len
+        ~src:t
+        ~dst:(b : (char, _, Bigarray.c_layout) Bigarray.Array1.t)
+        ~dst_pos
+        ~dst_len
     =
     let dst_total_len = Bigarray.Array1.dim b in
     Base.Ordered_collection_common.check_pos_len_exn
@@ -103,10 +103,10 @@ module Tensor = struct
   ;;
 
   let copy_from_bigstring
-    ~src:(b : (char, _, Bigarray.c_layout) Bigarray.Array1.t)
-    ~src_pos
-    ~src_len
-    ~dst:t
+        ~src:(b : (char, _, Bigarray.c_layout) Bigarray.Array1.t)
+        ~src_pos
+        ~src_len
+        ~dst:t
     =
     let src_total_len = Bigarray.Array1.dim b in
     Base.Ordered_collection_common.check_pos_len_exn
@@ -354,12 +354,12 @@ module Serialize = struct
   let load_all ~filename =
     let all_tensors = ref [] in
     let callback =
-      coerce
-        (Foreign.funptr (string @-> raw_tensor @-> returning void))
-        (static_funptr (string @-> raw_tensor @-> returning void))
-        (fun tensor_name tensor ->
-          all_tensors := (unescape tensor_name, with_tensor_gc tensor) :: !all_tensors)
-      [@alert "-deprecated"]
+      (coerce
+         (Foreign.funptr (string @-> raw_tensor @-> returning void))
+         (static_funptr (string @-> raw_tensor @-> returning void))
+         (fun tensor_name tensor ->
+            all_tensors := (unescape tensor_name, with_tensor_gc tensor) :: !all_tensors)
+       [@alert "-deprecated"])
     in
     load_callback filename callback;
     !all_tensors

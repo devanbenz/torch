@@ -178,7 +178,7 @@ let new_var ?(trainable = true) t ~shape ~init ~name =
           |> Tensor.to_device ~device
           |> Tensor.set_requires_grad ~r:requires_grad
       in
-      Tensor.convert_rc_tensor_to_gc tensor [@nontail])
+      (Tensor.convert_rc_tensor_to_gc tensor [@nontail]))
   in
   if String.contains name '.'
   then Printf.failwithf "tensor names cannot contain ., %s" name ();

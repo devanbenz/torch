@@ -19,7 +19,7 @@ let%expect_test "Basic text helper usage" =
       in
       let xs = labels_to_string xs in
       let ys = labels_to_string ys in
-      print_s [%message "" ~idx:(idx : int) ~xs:(xs : string) ~ys:(ys : string)]));
+      print_s [%message "" ~(idx : int) ~(xs : string) ~(ys : string)]));
   [%expect
     {|
     ((idx 0) (xs "esting the refcounted tensor imp")

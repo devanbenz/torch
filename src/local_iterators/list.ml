@@ -51,7 +51,7 @@ let%expect_test "iter2_local_exn" =
   iter2_local_exn a b ~f:(fun a_elem b_elem ->
     let a_elem = Int.globalize a_elem in
     let b_elem = Int.globalize b_elem in
-    print_s [%message "" ~a_elem:(a_elem : int) ~b_elem:(b_elem : int)]);
+    print_s [%message "" ~(a_elem : int) ~(b_elem : int)]);
   [%expect
     {|
     ((a_elem 0) (b_elem 3))

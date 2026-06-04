@@ -39,7 +39,7 @@ let trunc_normal_ tensor ~mean ~std ~a ~b =
   let erf x =
     let t = Tensor.of_float0 x in
     let t = Tensor.erf_ t in
-    Tensor.to_float0_exn t [@nontail]
+    (Tensor.to_float0_exn t [@nontail])
   in
   let norm_cdf x = (1. +. erf (x /. Float.sqrt 2.)) /. 2. in
   let l = norm_cdf ((a -. mean) /. std) in
@@ -53,20 +53,20 @@ let trunc_normal_ tensor ~mean ~std ~a ~b =
 ;;
 
 let linear_layer_trunc_normal_init
-  ?use_bias
-  ?(a = -2.)
-  ?(b = 2.)
-  vs
-  ~input_dim
-  ~output_dim
-  ~mean
-  ~std
+      ?use_bias
+      ?(a = -2.)
+      ?(b = 2.)
+      vs
+      ~input_dim
+      ~output_dim
+      ~mean
+      ~std
   =
   let weight_shape = [ output_dim; input_dim ] in
   let weight_tensor = Tensor.zeros weight_shape ~kind:(T Float) in
   let weight_tensor = trunc_normal_ weight_tensor ~mean ~std ~a ~b in
   let w_init = Var_store.Init.Copy weight_tensor in
-  Layer.linear vs ~input_dim output_dim ?use_bias ~w_init [@nontail]
+  (Layer.linear vs ~input_dim output_dim ?use_bias ~w_init [@nontail])
 ;;
 
 let precompute_freqs_cis ?(theta = 10000.0) vs ~dim ~end_ =
@@ -232,16 +232,16 @@ let attention vs cfg ~weight_init_std =
       |> Tensor.contiguous
       |> Tensor.view ~size:[ bsz; seqlen; -1 ]
     in
-    Layer.forward wo output [@nontail]
+    (Layer.forward wo output [@nontail])
 ;;
 
 let feed_forward
-  ?(ffn_dim_multiplier = 1.)
-  vs
-  ~dim
-  ~hidden_dim
-  ~multiple_of
-  ~weight_init_std
+      ?(ffn_dim_multiplier = 1.)
+      vs
+      ~dim
+      ~hidden_dim
+      ~multiple_of
+      ~weight_init_std
   =
   let hidden_dim = 2 * hidden_dim / 3 in
   let hidden_dim = ffn_dim_multiplier *. Float.of_int hidden_dim |> Int.of_float in

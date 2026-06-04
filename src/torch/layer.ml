@@ -86,14 +86,14 @@ let conv_weight_bias vs ~output_dim ~input_dim ~groups ~ksize ~dilation ~w_init 
 ;;
 
 let conv_transpose_weight_bias
-  vs
-  ~output_dim
-  ~input_dim
-  ~groups
-  ~ksize
-  ~dilation
-  ~w_init
-  ~use_bias
+      vs
+      ~output_dim
+      ~input_dim
+      ~groups
+      ~ksize
+      ~dilation
+      ~w_init
+      ~use_bias
   =
   let w_init =
     Option.value w_init ~default:(Var_store.Init.Normal { mean = 0.; stdev = 0.1 })
@@ -115,17 +115,17 @@ let conv_transpose_weight_bias
 ;;
 
 let conv1d
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0)
-  ?(groups = 1)
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0)
+      ?(groups = 1)
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   let dilation = [ dilation ] in
   let weight, bias =
@@ -154,18 +154,18 @@ let conv1d
 ;;
 
 let conv_transpose1d
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0)
-  ?(output_padding = 0)
-  ?(groups = 1)
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0)
+      ?(output_padding = 0)
+      ?(groups = 1)
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   let dilation = [ dilation ] in
   let weight, bias =
@@ -195,17 +195,17 @@ let conv_transpose1d
 ;;
 
 let conv2d
-  vs
-  ~ksize:(k1, k2)
-  ~stride
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0, 0)
-  ?(groups = 1)
-  ?(dilation = 1, 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize:(k1, k2)
+      ~stride
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0, 0)
+      ?(groups = 1)
+      ?(dilation = 1, 1)
+      ~input_dim
+      output_dim
   =
   match dilation with
   | d1, d2 ->
@@ -228,17 +228,17 @@ let conv2d
 ;;
 
 let conv2d_
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?use_bias
-  ?w_init
-  ?(padding = 0)
-  ?groups
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?use_bias
+      ?w_init
+      ?(padding = 0)
+      ?groups
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   conv2d
     vs
@@ -255,18 +255,18 @@ let conv2d_
 ;;
 
 let conv_transpose2d
-  vs
-  ~ksize:(k1, k2)
-  ~stride
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0, 0)
-  ?(output_padding = 0, 0)
-  ?(groups = 1)
-  ?(dilation = 1, 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize:(k1, k2)
+      ~stride
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0, 0)
+      ?(output_padding = 0, 0)
+      ?(groups = 1)
+      ?(dilation = 1, 1)
+      ~input_dim
+      output_dim
   =
   match dilation with
   | d1, d2 ->
@@ -298,18 +298,18 @@ let conv_transpose2d
 ;;
 
 let conv_transpose2d_
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?use_bias
-  ?w_init
-  ?(padding = 0)
-  ?(output_padding = 0)
-  ?groups
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?use_bias
+      ?w_init
+      ?(padding = 0)
+      ?(output_padding = 0)
+      ?groups
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   conv_transpose2d
     vs
@@ -327,17 +327,17 @@ let conv_transpose2d_
 ;;
 
 let conv3d
-  vs
-  ~ksize:(k1, k2, k3)
-  ~stride:(s1, s2, s3)
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0, 0, 0)
-  ?(groups = 1)
-  ?(dilation = 1, 1, 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize:(k1, k2, k3)
+      ~stride:(s1, s2, s3)
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0, 0, 0)
+      ?(groups = 1)
+      ?(dilation = 1, 1, 1)
+      ~input_dim
+      output_dim
   =
   match padding, dilation with
   | (p1, p2, p3), (d1, d2, d3) ->
@@ -368,17 +368,17 @@ let conv3d
 ;;
 
 let conv3d_
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?use_bias
-  ?w_init
-  ?(padding = 0)
-  ?groups
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?use_bias
+      ?w_init
+      ?(padding = 0)
+      ?groups
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   conv3d
     vs
@@ -395,18 +395,18 @@ let conv3d_
 ;;
 
 let conv_transpose3d
-  vs
-  ~ksize:(k1, k2, k3)
-  ~stride:(s1, s2, s3)
-  ?activation
-  ?(use_bias = true)
-  ?w_init
-  ?(padding = 0, 0, 0)
-  ?(output_padding = 0, 0, 0)
-  ?(groups = 1)
-  ?(dilation = 1, 1, 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize:(k1, k2, k3)
+      ~stride:(s1, s2, s3)
+      ?activation
+      ?(use_bias = true)
+      ?w_init
+      ?(padding = 0, 0, 0)
+      ?(output_padding = 0, 0, 0)
+      ?(groups = 1)
+      ?(dilation = 1, 1, 1)
+      ~input_dim
+      output_dim
   =
   match padding, output_padding, dilation with
   | (p1, p2, p3), (o1, o2, o3), (d1, d2, d3) ->
@@ -438,18 +438,18 @@ let conv_transpose3d
 ;;
 
 let conv_transpose3d_
-  vs
-  ~ksize
-  ~stride
-  ?activation
-  ?use_bias
-  ?w_init
-  ?(padding = 0)
-  ?(output_padding = 0)
-  ?groups
-  ?(dilation = 1)
-  ~input_dim
-  output_dim
+      vs
+      ~ksize
+      ~stride
+      ?activation
+      ?use_bias
+      ?w_init
+      ?(padding = 0)
+      ?(output_padding = 0)
+      ?groups
+      ?(dilation = 1)
+      ~input_dim
+      output_dim
   =
   conv_transpose3d
     vs
@@ -467,12 +467,12 @@ let conv_transpose3d_
 ;;
 
 let batch_norm2d
-  vs
-  ?(w_init = Var_store.Init.Uniform (0., 1.))
-  ?(cudnn_enabled = true)
-  ?(eps = 1e-5)
-  ?(momentum = 0.1)
-  output_dim
+      vs
+      ?(w_init = Var_store.Init.Uniform (0., 1.))
+      ?(cudnn_enabled = true)
+      ?(eps = 1e-5)
+      ?(momentum = 0.1)
+      output_dim
   =
   let w = Var_store.new_var vs ~shape:[ output_dim ] ~init:w_init ~name:"weight" in
   let b = Var_store.new_var vs ~shape:[ output_dim ] ~init:Zeros ~name:"bias" in
@@ -679,11 +679,11 @@ module Gru = struct
 end
 
 let embeddings
-  ?(sparse = false)
-  ?(scale_grad_by_freq = false)
-  vs
-  ~num_embeddings
-  ~embedding_dim
+      ?(sparse = false)
+      ?(scale_grad_by_freq = false)
+      vs
+      ~num_embeddings
+      ~embedding_dim
   =
   let weight =
     Var_store.new_var

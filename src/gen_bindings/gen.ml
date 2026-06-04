@@ -118,10 +118,10 @@ let extract_string = function
 ;;
 
 let append_local_mode_if_refcounted
-  ?(wrap_input_in_parens = false)
-  ?(wrap_output_in_parens = false)
-  text
-  ~refcounted
+      ?(wrap_input_in_parens = false)
+      ?(wrap_output_in_parens = false)
+      text
+      ~refcounted
   =
   if refcounted
   then (
@@ -575,14 +575,15 @@ let read_yaml filename =
       then Some `method_
       else None
     in
-    if (not deprecated)
-       && (not
-             (List.exists excluded_prefixes ~f:(fun prefix ->
-                String.is_prefix name ~prefix)))
-       && (not
-             (List.exists excluded_suffixes ~f:(fun suffix ->
-                String.is_suffix name ~suffix)))
-       && not (Set.mem excluded_functions name)
+    if
+      (not deprecated)
+      && (not
+            (List.exists excluded_prefixes ~f:(fun prefix ->
+               String.is_prefix name ~prefix)))
+      && (not
+            (List.exists excluded_suffixes ~f:(fun suffix ->
+               String.is_suffix name ~suffix)))
+      && not (Set.mem excluded_functions name)
     then
       Option.both returns kind
       |> Option.bind ~f:(fun (returns, kind) ->
@@ -626,8 +627,8 @@ let read_yaml filename =
 let p out_channel s =
   Printf.ksprintf
     (fun line ->
-      Out_channel.output_string out_channel line;
-      Out_channel.output_char out_channel '\n')
+       Out_channel.output_string out_channel line;
+       Out_channel.output_char out_channel '\n')
     s
 ;;
 

@@ -101,10 +101,10 @@ let pop_current_scope_and_transfer ~tensors_to_shift_out =
     | Some outer_scope ->
       List.globalize
         (fun tensor ->
-          increment_refcount tensor;
-          let tensor = globalize_gc_tensor tensor in
-          Tensor_scope.add outer_scope tensor;
-          tensor)
+           increment_refcount tensor;
+           let tensor = globalize_gc_tensor tensor in
+           Tensor_scope.add outer_scope tensor;
+           tensor)
         tensors_to_shift_out
     | None -> List.globalize convert_rc_tensor_to_gc tensors_to_shift_out
   in
@@ -138,7 +138,7 @@ let with_rc_scope_tensors (f : unit -> gc_tensor list) : gc_tensor list =
       pop_current_scope ();
       raise exn
   in
-  pop_current_scope_and_transfer ~tensors_to_shift_out:returned_tensors [@nontail]
+  (pop_current_scope_and_transfer ~tensors_to_shift_out:returned_tensors [@nontail])
 ;;
 
 let with_rc_scope (f : unit -> 'a) : 'a =
