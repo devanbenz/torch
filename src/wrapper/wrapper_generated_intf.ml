@@ -317,7 +317,7 @@ module type S = sig
     -> transpose_result:bool
     -> alg_id:int
     -> split_k:int
-    -> split_k_one_kernel:bool
+    -> split_k_mode:int
     -> t
 
   val _cslt_sparse_mm_search
@@ -405,6 +405,25 @@ module type S = sig
     -> blank:int
     -> zero_infinity:bool
     -> t * t
+
+  val _cudnn_attention_backward
+    :  grad_out:t
+    -> query:t
+    -> key:t
+    -> value:t
+    -> out:t
+    -> logsumexp:t
+    -> philox_seed:t
+    -> philox_offset:t
+    -> attn_bias:t
+    -> cum_seq_q:t
+    -> cum_seq_k:t
+    -> max_q:int
+    -> max_k:int
+    -> dropout_p:float
+    -> is_causal:bool
+    -> scale:float option
+    -> t * t * t
 
   val _cudnn_ctc_loss
     :  log_probs:t
@@ -852,6 +871,27 @@ module type S = sig
     -> window_size_right:int option
     -> t * t * t
 
+  val _flash_attention_forward_no_dropout_inplace
+    :  out:t
+    -> query:t
+    -> key:t
+    -> value:t
+    -> cum_seq_q:t option
+    -> cum_seq_k:t option
+    -> max_q:int
+    -> max_k:int
+    -> dropout_p:float
+    -> is_causal:bool
+    -> return_debug_mask:bool
+    -> scale:float option
+    -> window_size_left:int option
+    -> window_size_right:int option
+    -> seqused_k:t option
+    -> alibi_slopes:t option
+    -> block_table:t option
+    -> num_splits:int option
+    -> t
+
   val _foobar : t -> arg1:bool -> arg2:bool -> arg3:bool -> t
   val _foobar_out : out:t -> t -> arg1:bool -> arg2:bool -> arg3:bool -> t
   val _functional_assert_async : t -> assert_msg:string -> dep_token:t -> t
@@ -892,6 +932,35 @@ module type S = sig
     -> state_sums:t list
     -> state_steps:t list
     -> lr:float
+    -> lr_decay:float
+    -> weight_decay:float
+    -> eps:float
+    -> maximize:bool
+    -> grad_scale:t option
+    -> found_inf:t option
+    -> unit
+
+  val _fused_adagrad_tensor_lr_
+    :  t list
+    -> grads:t list
+    -> state_sums:t list
+    -> state_steps:t list
+    -> lr:t
+    -> lr_decay:float
+    -> weight_decay:float
+    -> eps:float
+    -> maximize:bool
+    -> grad_scale:t option
+    -> found_inf:t option
+    -> unit
+
+  val _fused_adagrad_tensor_lr_out
+    :  out:t list
+    -> t list
+    -> grads:t list
+    -> state_sums:t list
+    -> state_steps:t list
+    -> lr:t
     -> lr_decay:float
     -> weight_decay:float
     -> eps:float
@@ -1101,6 +1170,13 @@ module type S = sig
     -> symmetric_quant:bool
     -> t * t
 
+  val _fused_rms_norm
+    :  t
+    -> normalized_shape:int list
+    -> weight:t option
+    -> eps:float option
+    -> t * t
+
   val _fused_sdp_choice
     :  query:t
     -> key:t
@@ -1203,6 +1279,14 @@ module type S = sig
     -> interpolation_mode:int
     -> padding_mode:int
     -> align_corners:bool
+    -> t
+
+  val _grouped_mm
+    :  t
+    -> mat2:t
+    -> offs:t option
+    -> bias:t option
+    -> out_dtype:Kind.packed
     -> t
 
   val _has_compatible_shallow_copy_type : t -> from:t -> bool
@@ -1741,6 +1825,14 @@ module type S = sig
 
   val _pdist_backward : grad:t -> t -> p:float -> pdist:t -> t
   val _pdist_backward_out : out:t -> grad:t -> t -> p:float -> pdist:t -> t
+  val _philox_key_fold_in : key:t -> data:int -> t
+  val _philox_key_split : key:t -> num_splits:int -> t
+  val _philox_normal : t -> key:t -> mean:float -> std:float -> t
+  val _philox_normal_ : t -> key:t -> mean:float -> std:float -> t
+  val _philox_normal_out : out:t -> t -> key:t -> mean:float -> std:float -> t
+  val _philox_uniform : t -> key:t -> low:float -> high:float -> t
+  val _philox_uniform_ : t -> key:t -> low:float -> high:float -> t
+  val _philox_uniform_out : out:t -> t -> key:t -> low:float -> high:float -> t
   val _pin_memory : t -> device:Device.t option -> t
   val _pin_memory_out : out:t -> t -> device:Device.t option -> t
   val _prelu_kernel : t -> weight:t -> t
@@ -1783,6 +1875,7 @@ module type S = sig
     -> is_causal:bool
     -> dropout_mask:t option
     -> scale:float option
+    -> enable_gqa:bool
     -> t * t
 
   val _scaled_dot_product_cudnn_attention_backward
@@ -1868,6 +1961,22 @@ module type S = sig
     -> use_fast_accum:bool
     -> t
 
+  val _scaled_grouped_mm_v2
+    :  t
+    -> mat2:t
+    -> scale_a:t list
+    -> recipe_a:int list
+    -> swizzle_a:int list
+    -> scale_b:t list
+    -> recipe_b:int list
+    -> swizzle_b:int list
+    -> offs:t option
+    -> bias:t option
+    -> out_dtype:Kind.packed
+    -> contraction_dim:int list
+    -> use_fast_accum:bool
+    -> t
+
   val _scaled_mm
     :  t
     -> mat2:t
@@ -1888,6 +1997,37 @@ module type S = sig
     -> bias:t option
     -> scale_result:t option
     -> out_dtype:Kind.packed
+    -> use_fast_accum:bool
+    -> t
+
+  val _scaled_mm_v2
+    :  t
+    -> mat2:t
+    -> scale_a:t list
+    -> recipe_a:int list
+    -> swizzle_a:int list
+    -> scale_b:t list
+    -> recipe_b:int list
+    -> swizzle_b:int list
+    -> bias:t option
+    -> out_dtype:Kind.packed
+    -> contraction_dim:int list
+    -> use_fast_accum:bool
+    -> t
+
+  val _scaled_mm_v2_out
+    :  out:t
+    -> t
+    -> mat2:t
+    -> scale_a:t list
+    -> recipe_a:int list
+    -> swizzle_a:int list
+    -> scale_b:t list
+    -> recipe_b:int list
+    -> swizzle_b:int list
+    -> bias:t option
+    -> out_dtype:Kind.packed
+    -> contraction_dim:int list
     -> use_fast_accum:bool
     -> t
 
@@ -2568,6 +2708,49 @@ module type S = sig
     -> scale_factors:float list
     -> t
 
+  val _upsample_lanczos2d_aa
+    :  t
+    -> output_size:int list
+    -> align_corners:bool
+    -> scales_h:float option
+    -> scales_w:float option
+    -> t
+
+  val _upsample_lanczos2d_aa_backward
+    :  grad_output:t
+    -> output_size:int list
+    -> input_size:int list
+    -> align_corners:bool
+    -> scales_h:float option
+    -> scales_w:float option
+    -> t
+
+  val _upsample_lanczos2d_aa_backward_grad_input
+    :  grad_input:t
+    -> grad_output:t
+    -> output_size:int list
+    -> input_size:int list
+    -> align_corners:bool
+    -> scales_h:float option
+    -> scales_w:float option
+    -> t
+
+  val _upsample_lanczos2d_aa_out
+    :  out:t
+    -> t
+    -> output_size:int list
+    -> align_corners:bool
+    -> scales_h:float option
+    -> scales_w:float option
+    -> t
+
+  val _upsample_lanczos2d_aa_vec
+    :  t
+    -> output_size:int list option
+    -> align_corners:bool
+    -> scale_factors:float list
+    -> t
+
   val _upsample_nearest_exact1d : t -> output_size:int list -> scales:float option -> t
 
   val _upsample_nearest_exact1d_backward
@@ -2696,6 +2879,22 @@ module type S = sig
 
   val _use_cudnn_rnn_flatten_weight : unit -> bool
 
+  val _use_miopen_ctc_loss
+    :  log_probs:t
+    -> targets:t
+    -> input_lengths:int list
+    -> target_lengths:int list
+    -> blank:int
+    -> bool
+
+  val _use_miopen_ctc_loss_tensor
+    :  log_probs:t
+    -> targets:t
+    -> input_lengths:t
+    -> target_lengths:t
+    -> blank:int
+    -> bool
+
   val _validate_compressed_sparse_indices
     :  is_crow:bool
     -> compressed_idx:t
@@ -2710,6 +2909,7 @@ module type S = sig
     -> row_indices:t
     -> values:t
     -> size:int list
+    -> check_pinning:bool
     -> unit
 
   val _validate_sparse_bsr_tensor_args
@@ -2717,6 +2917,7 @@ module type S = sig
     -> col_indices:t
     -> values:t
     -> size:int list
+    -> check_pinning:bool
     -> unit
 
   val _validate_sparse_csc_tensor_args
@@ -2724,6 +2925,7 @@ module type S = sig
     -> row_indices:t
     -> values:t
     -> size:int list
+    -> check_pinning:bool
     -> unit
 
   val _values : t -> t
@@ -2732,6 +2934,15 @@ module type S = sig
   val _version : t -> int64
   val _weight_int4pack_mm : t -> mat2:t -> qgroupsize:int -> qscaleandzeros:t -> t
   val _weight_int4pack_mm_for_cpu : t -> mat2:t -> qgroupsize:int -> qscaleandzeros:t -> t
+
+  val _weight_int4pack_mm_with_scales_and_zeros
+    :  t
+    -> mat2:t
+    -> qgroupsize:int
+    -> qscale:t
+    -> qzeros:t
+    -> t
+
   val _weight_int8pack_mm : t -> mat2:t -> scales:t -> t
   val _weight_norm : v:t -> g:t -> dim:int -> t
 
@@ -2850,6 +3061,25 @@ module type S = sig
   val addcmul_out : ?value:'a scalar -> out:t -> t -> tensor1:t -> tensor2:t -> t
   val addmm : ?beta:'a scalar -> ?alpha:'a scalar -> t -> mat1:t -> mat2:t -> t
   val addmm_ : ?beta:'a scalar -> ?alpha:'a scalar -> t -> mat1:t -> mat2:t -> t
+
+  val addmm_dtype
+    :  ?beta:'a scalar
+    -> ?alpha:'a scalar
+    -> t
+    -> mat1:t
+    -> mat2:t
+    -> out_dtype:Kind.packed
+    -> t
+
+  val addmm_dtype_out
+    :  ?beta:'a scalar
+    -> ?alpha:'a scalar
+    -> out:t
+    -> t
+    -> mat1:t
+    -> mat2:t
+    -> out_dtype:Kind.packed
+    -> t
 
   val addmm_out
     :  ?beta:'a scalar
@@ -3131,6 +3361,25 @@ module type S = sig
 
   val baddbmm : ?beta:'a scalar -> ?alpha:'a scalar -> t -> batch1:t -> batch2:t -> t
   val baddbmm_ : ?beta:'a scalar -> ?alpha:'a scalar -> t -> batch1:t -> batch2:t -> t
+
+  val baddbmm_dtype
+    :  ?beta:'a scalar
+    -> ?alpha:'a scalar
+    -> t
+    -> batch1:t
+    -> batch2:t
+    -> out_dtype:Kind.packed
+    -> t
+
+  val baddbmm_dtype_out
+    :  ?beta:'a scalar
+    -> ?alpha:'a scalar
+    -> out:t
+    -> t
+    -> batch1:t
+    -> batch2:t
+    -> out_dtype:Kind.packed
+    -> t
 
   val baddbmm_out
     :  ?beta:'a scalar
@@ -3415,6 +3664,8 @@ module type S = sig
   val block_diag : t list -> t
   val block_diag_out : out:t -> t list -> t
   val bmm : t -> mat2:t -> t
+  val bmm_dtype : t -> mat2:t -> out_dtype:Kind.packed -> t
+  val bmm_dtype_out : out:t -> t -> mat2:t -> out_dtype:Kind.packed -> t
   val bmm_out : out:t -> t -> mat2:t -> t
   val broadcast_tensors : t list -> t list
   val broadcast_to : t -> size:int list -> t
@@ -4048,6 +4299,7 @@ module type S = sig
   val digamma : t -> t
   val digamma_ : t -> t
   val digamma_out : out:t -> t -> t
+  val dim : t -> int64
   val dist : ?p:'a scalar -> t -> t -> t
   val dist_out : ?p:'a scalar -> out:t -> t -> t -> t
   val div : t -> t -> t
@@ -4323,7 +4575,21 @@ module type S = sig
     -> t
 
   val fbgemm_linear_fp16_weight : t -> packed_weight:t -> bias:t -> t
-  val fbgemm_linear_fp16_weight_fp32_activation : t -> packed_weight:t -> bias:t -> t
+
+  val fbgemm_linear_fp16_weight_fp32_activation
+    :  t
+    -> packed_weight:t
+    -> bias:t option
+    -> t
+
+  val fbgemm_linear_fp16_weight_fp32_activation_out
+    :  t
+    -> packed_weight:t
+    -> bias:t option
+    -> output:t
+    -> t
+
+  val fbgemm_linear_fp16_weight_out : t -> packed_weight:t -> bias:t -> output:t -> t
 
   val fbgemm_linear_int8_weight
     :  t
@@ -4680,6 +4946,7 @@ module type S = sig
   val geqrf_a : a:t -> tau:t -> t -> t * t
   val ger : t -> vec2:t -> t
   val ger_out : out:t -> t -> vec2:t -> t
+  val get_device : t -> int64
   val glu : t -> dim:int -> t
   val glu_backward : grad_output:t -> t -> dim:int -> t
   val glu_backward_grad_input : grad_input:t -> grad_output:t -> t -> dim:int -> t
@@ -4893,6 +5160,8 @@ module type S = sig
     -> t
 
   val hardtanh_out : ?min_val:'a scalar -> ?max_val:'a scalar -> out:t -> t -> t
+  val hash_tensor : t -> dim:int list -> keepdim:bool -> mode:int -> t
+  val hash_tensor_out : out:t -> t -> dim:int list -> keepdim:bool -> mode:int -> t
   val heaviside : t -> values:t -> t
   val heaviside_ : t -> values:t -> t
   val heaviside_out : out:t -> t -> values:t -> t
@@ -5035,6 +5304,7 @@ module type S = sig
   val is_coalesced : t -> bool
   val is_complex : t -> bool
   val is_conj : t -> bool
+  val is_contiguous : t -> bool
   val is_distributed : t -> bool
   val is_floating_point : t -> bool
   val is_inference : t -> bool
@@ -5218,6 +5488,15 @@ module type S = sig
   val lift_fresh_copy : t -> t
   val lift_fresh_copy_out : out:t -> t -> t
   val lift_out : out:t -> t -> t
+
+  val linalg__powsum
+    :  ?ord:'a scalar
+    -> t
+    -> dim:int list option
+    -> keepdim:bool
+    -> dtype:Kind.packed
+    -> t
+
   val linalg_cholesky : t -> upper:bool -> t
   val linalg_cholesky_ex : t -> upper:bool -> check_errors:bool -> t * t
 
@@ -6043,6 +6322,38 @@ module type S = sig
     -> deterministic:bool
     -> t
 
+  val miopen_ctc_loss
+    :  log_probs:t
+    -> targets:t
+    -> input_lengths:int list
+    -> target_lengths:int list
+    -> blank:int
+    -> deterministic:bool
+    -> zero_infinity:bool
+    -> t * t
+
+  val miopen_ctc_loss_out
+    :  out0:t
+    -> out1:t
+    -> log_probs:t
+    -> targets:t
+    -> input_lengths:int list
+    -> target_lengths:int list
+    -> blank:int
+    -> deterministic:bool
+    -> zero_infinity:bool
+    -> t * t
+
+  val miopen_ctc_loss_tensor
+    :  log_probs:t
+    -> targets:t
+    -> input_lengths:t
+    -> target_lengths:t
+    -> blank:int
+    -> deterministic:bool
+    -> zero_infinity:bool
+    -> t * t
+
   val miopen_depthwise_convolution
     :  t
     -> weight:t
@@ -6389,6 +6700,8 @@ module type S = sig
     -> t * t * t * t
 
   val mm : t -> mat2:t -> t
+  val mm_dtype : t -> mat2:t -> out_dtype:Kind.packed -> t
+  val mm_dtype_out : out:t -> t -> mat2:t -> out_dtype:Kind.packed -> t
   val mm_out : out:t -> t -> mat2:t -> t
   val mode : t -> dim:int -> keepdim:bool -> t * t
   val mode_values : values:t -> indices:t -> t -> dim:int -> keepdim:bool -> t * t
@@ -6829,6 +7142,7 @@ module type S = sig
   val nuclear_norm_dim : t -> dim:int list -> keepdim:bool -> t
   val nuclear_norm_dim_out : out:t -> t -> dim:int list -> keepdim:bool -> t
   val nuclear_norm_out : out:t -> t -> keepdim:bool -> t
+  val numel : t -> int64
   val numpy_t : t -> t
   val one_hot : t -> num_classes:int -> t
   val ones : size:int list -> options:Kind.packed * Device.t -> t
@@ -7158,6 +7472,8 @@ module type S = sig
   val randint_like_low_dtype : t -> low:int -> high:int -> t
   val randint_like_low_dtype_out : out:t -> t -> low:int -> high:int -> t
   val randint_like_out : out:t -> t -> high:int -> t
+  val randint_like_tensor : t -> high:t -> t
+  val randint_like_tensor_out : out:t -> t -> high:t -> t
 
   val randint_low
     :  low:int
@@ -8360,6 +8676,7 @@ module type S = sig
     -> align_to_window:bool
     -> t
 
+  val storage_offset : t -> int64
   val stride : t -> dim:int -> int64
   val sub : ?alpha:'a scalar -> t -> t -> t
   val sub_ : ?alpha:'a scalar -> t -> t -> t

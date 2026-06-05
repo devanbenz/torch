@@ -94,7 +94,11 @@ let torch_flags () =
 ;;
 
 let libcuda_flags ~lcuda ~lnvrtc =
-  let cudadir = "/usr/local/cuda/lib64" in
+  let cudadir =
+    match Stdlib.Sys.getenv_opt "CUDA_PATH" with
+    | Some prefix -> prefix ^ "/lib64"
+    | None -> "/usr/local/cuda/lib64"
+  in
   if file_exists cudadir && Stdlib.Sys.is_directory cudadir
   then (
     let libs =
@@ -149,8 +153,8 @@ let () =
       then torch_flags.libs
       else "-Wl,--no-as-needed" :: torch_flags.libs
     in
-    let ocaml_flags =
-      ocaml_flags_of_c_flags (torch_flags_lib @ conda_libs @ cuda_flags.libs)
-    in
-    C.Flags.write_sexp "flags.sexp" ocaml_flags)
+    let raw_link_flags = torch_flags_lib @ conda_libs @ cuda_flags.libs in
+    let ocaml_flags = ocaml_flags_of_c_flags raw_link_flags in
+    C.Flags.write_sexp "flags.sexp" ocaml_flags;
+    C.Flags.write_sexp "c_library_flags.sexp" raw_link_flags)
 ;;

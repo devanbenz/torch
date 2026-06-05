@@ -47,9 +47,10 @@ let length_in_words str =
 ;;
 
 let filter_pair lhs rhs ~max_length =
-  if length_in_words lhs < max_length
-     && length_in_words rhs < max_length
-     && (filter_prefix lhs || filter_prefix rhs)
+  if
+    length_in_words lhs < max_length
+    && length_in_words rhs < max_length
+    && (filter_prefix lhs || filter_prefix rhs)
   then Some (lhs, rhs)
   else None
 ;;

@@ -54,11 +54,11 @@ let write_and_read named_tensors =
 
 let%expect_test _ =
   Tensor.with_rc_scope (fun () ->
-    write_and_read
-      [ "tensor-1", Tensor.of_float1 [| 3.; 14.; 15.; 9265.35 |]
-      ; "another", Tensor.of_int0 42
-      ; "and yet another", Tensor.of_int2 [| [| 3; -1; -51234 |]; [| 2718; 2818; 28 |] |]
-      ] [@nontail]);
+    (write_and_read
+       [ "tensor-1", Tensor.of_float1 [| 3.; 14.; 15.; 9265.35 |]
+       ; "another", Tensor.of_int0 42
+       ; "and yet another", Tensor.of_int2 [| [| 3; -1; -51234 |]; [| 2718; 2818; 28 |] |]
+       ] [@nontail]));
   [%expect
     {|
     tensor-1 0.000000

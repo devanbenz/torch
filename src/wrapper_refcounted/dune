@@ -7,7 +7,6 @@
    -fPIC
    (:include cxx_flags.sexp)))
  (name torch_refcounted_core)
- (public_name torch.refcounted.core)
  (c_library_flags :standard -lstdc++)
  (flags
   :standard
@@ -16,10 +15,16 @@
   (language c)
   (names torch_stubs torch_refcounted_stubs_generated)
   (flags :standard -Wno-discarded-qualifiers -Wno-incompatible-pointer-types)
-  (extra_deps torch_refcounted_api_generated.h
-    torch_refcounted_api_generated.cpp))
- (libraries core ctypes.foreign ctypes torch_local_iterators
-   torch_refcounted_bindings torch_wrapper_types)
+  (extra_deps
+   torch_refcounted_api_generated.h
+   torch_refcounted_api_generated.cpp))
+ (libraries
+  core
+  ctypes.foreign
+  ctypes
+  torch_local_iterators
+  torch_refcounted_bindings
+  torch_wrapper_types)
  (preprocess
   (pps ppx_jane)))
 
@@ -36,8 +41,9 @@
   (bash %{deps})))
 
 (rule
- (targets torch_refcounted_stubs_generated.c
-   torch_refcounted_stubs_generated.ml)
+ (targets
+  torch_refcounted_stubs_generated.c
+  torch_refcounted_stubs_generated.ml)
  (deps ../gen_stubs/gen_stubs.exe)
  (action
   (bash "./%{deps} -refcounted true")))

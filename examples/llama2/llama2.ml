@@ -49,14 +49,14 @@ let trunc_normal_ tensor ~mean ~std ~a ~b =
 ;;
 
 let linear_layer_trunc_normal_init
-  ?use_bias
-  ?(a = -2.)
-  ?(b = 2.)
-  vs
-  ~input_dim
-  ~output_dim
-  ~mean
-  ~std
+      ?use_bias
+      ?(a = -2.)
+      ?(b = 2.)
+      vs
+      ~input_dim
+      ~output_dim
+      ~mean
+      ~std
   =
   let weight_shape = [ output_dim; input_dim ] in
   let weight_tensor = Tensor.zeros weight_shape ~kind:(T Float) in
@@ -220,12 +220,12 @@ let attention vs cfg ~weight_init_std =
 ;;
 
 let feed_forward
-  ?(ffn_dim_multiplier = 1.)
-  vs
-  ~dim
-  ~hidden_dim
-  ~multiple_of
-  ~weight_init_std
+      ?(ffn_dim_multiplier = 1.)
+      vs
+      ~dim
+      ~hidden_dim
+      ~multiple_of
+      ~weight_init_std
   =
   let hidden_dim = 2 * hidden_dim / 3 in
   let hidden_dim = ffn_dim_multiplier *. Float.of_int hidden_dim |> Int.of_float in

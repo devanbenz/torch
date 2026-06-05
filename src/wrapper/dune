@@ -8,7 +8,10 @@
    (:include cxx_flags.sexp)))
  (name torch_core)
  (public_name torch.core)
- (c_library_flags :standard -lstdc++)
+ (c_library_flags
+  :standard
+  -lstdc++
+  (:include c_library_flags.sexp))
  (flags
   :standard
   (:include flags.sexp))
@@ -28,7 +31,7 @@
   (bash "echo \"#define OCAML_DEPENDENT_MEM_TRACKING false\" > %{targets}")))
 
 (rule
- (targets cxx_flags.sexp flags.sexp)
+ (targets cxx_flags.sexp flags.sexp c_library_flags.sexp)
  (deps ../config/discover.exe)
  (action
   (bash %{deps})))

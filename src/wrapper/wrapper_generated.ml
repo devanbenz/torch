@@ -239,12 +239,12 @@ let _aminmax_out ~out0 ~out1 self =
 ;;
 
 let _amp_update_scale
-  self
-  ~growth_tracker
-  ~found_inf
-  ~scale_growth_factor
-  ~scale_backoff_factor
-  ~growth_interval
+      self
+      ~growth_tracker
+      ~found_inf
+      ~scale_growth_factor
+      ~scale_backoff_factor
+      ~growth_interval
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__amp_update_scale
@@ -261,12 +261,12 @@ let _amp_update_scale
 ;;
 
 let _amp_update_scale_
-  self
-  ~growth_tracker
-  ~found_inf
-  ~scale_growth_factor
-  ~scale_backoff_factor
-  ~growth_interval
+      self
+      ~growth_tracker
+      ~found_inf
+      ~scale_growth_factor
+      ~scale_backoff_factor
+      ~growth_interval
   =
   stubs__amp_update_scale_
     self
@@ -279,13 +279,13 @@ let _amp_update_scale_
 ;;
 
 let _amp_update_scale_out
-  ~out
-  self
-  ~growth_tracker
-  ~found_inf
-  ~scale_growth_factor
-  ~scale_backoff_factor
-  ~growth_interval
+      ~out
+      self
+      ~growth_tracker
+      ~found_inf
+      ~scale_growth_factor
+      ~scale_backoff_factor
+      ~growth_interval
   =
   stubs__amp_update_scale_out
     out
@@ -364,17 +364,17 @@ let _batch_norm_no_update input ~weight ~bias ~running_mean ~running_var ~moment
 ;;
 
 let _batch_norm_no_update_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__batch_norm_no_update_out
@@ -428,13 +428,13 @@ let _batch_norm_with_update input ~weight ~bias ~running_mean ~running_var ~mome
 ;;
 
 let _batch_norm_with_update_functional
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 6 in
   stubs__batch_norm_with_update_functional
@@ -460,17 +460,17 @@ let _batch_norm_with_update_functional
 ;;
 
 let _batch_norm_with_update_out
-  ~out
-  ~save_mean
-  ~save_invstd
-  ~reserve
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
+      ~out
+      ~save_mean
+      ~save_invstd
+      ~reserve
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__batch_norm_with_update_out
@@ -665,11 +665,11 @@ let _convert_indices_from_csr_to_coo ~crow_indices ~col_indices ~out_int32 ~tran
 ;;
 
 let _convert_indices_from_csr_to_coo_out
-  ~out
-  ~crow_indices
-  ~col_indices
-  ~out_int32
-  ~transpose
+      ~out
+      ~crow_indices
+      ~col_indices
+      ~out_int32
+      ~transpose
   =
   stubs__convert_indices_from_csr_to_coo_out
     out
@@ -690,19 +690,19 @@ let _convert_weight_to_int4pack_for_cpu self ~innerktiles =
 ;;
 
 let _convolution
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~cudnn_enabled
-  ~allow_tf32
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~cudnn_enabled
+      ~allow_tf32
   =
   stubs__convolution
     input
@@ -728,18 +728,18 @@ let _convolution
 ;;
 
 let _convolution_deprecated
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~cudnn_enabled
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~cudnn_enabled
   =
   stubs__convolution_deprecated
     input
@@ -780,20 +780,20 @@ let _convolution_mode input ~weight ~bias ~stride ~padding ~dilation ~groups =
 ;;
 
 let _convolution_out
-  ~out
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~cudnn_enabled
-  ~allow_tf32
+      ~out
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~cudnn_enabled
+      ~allow_tf32
   =
   stubs__convolution_out
     out
@@ -838,15 +838,15 @@ let _copy_from_out ~out self ~dst ~non_blocking =
 let _cslt_compress input = stubs__cslt_compress input |> with_tensor_gc
 
 let _cslt_sparse_mm
-  ~compressed_a
-  ~dense_b
-  ~bias
-  ~alpha
-  ~out_dtype
-  ~transpose_result
-  ~alg_id
-  ~split_k
-  ~split_k_one_kernel
+      ~compressed_a
+      ~dense_b
+      ~bias
+      ~alpha
+      ~out_dtype
+      ~transpose_result
+      ~alg_id
+      ~split_k
+      ~split_k_mode
   =
   stubs__cslt_sparse_mm
     compressed_a
@@ -861,17 +861,17 @@ let _cslt_sparse_mm
     (if transpose_result then 1 else 0)
     (Int64.of_int alg_id)
     (Int64.of_int split_k)
-    (if split_k_one_kernel then 1 else 0)
+    (Int64.of_int split_k_mode)
   |> with_tensor_gc
 ;;
 
 let _cslt_sparse_mm_search
-  ~compressed_a
-  ~dense_b
-  ~bias
-  ~alpha
-  ~out_dtype
-  ~transpose_result
+      ~compressed_a
+      ~dense_b
+      ~bias
+      ~alpha
+      ~out_dtype
+      ~transpose_result
   =
   stubs__cslt_sparse_mm_search
     compressed_a
@@ -904,15 +904,15 @@ let _ctc_loss ~log_probs ~targets ~input_lengths ~target_lengths ~blank ~zero_in
 ;;
 
 let _ctc_loss_backward
-  ~grad
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~neg_log_likelihood
-  ~log_alpha
-  ~blank
-  ~zero_infinity
+      ~grad
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~neg_log_likelihood
+      ~log_alpha
+      ~blank
+      ~zero_infinity
   =
   stubs__ctc_loss_backward
     grad
@@ -930,16 +930,16 @@ let _ctc_loss_backward
 ;;
 
 let _ctc_loss_backward_out
-  ~out
-  ~grad
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~neg_log_likelihood
-  ~log_alpha
-  ~blank
-  ~zero_infinity
+      ~out
+      ~grad
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~neg_log_likelihood
+      ~log_alpha
+      ~blank
+      ~zero_infinity
   =
   stubs__ctc_loss_backward_out
     out
@@ -958,15 +958,15 @@ let _ctc_loss_backward_out
 ;;
 
 let _ctc_loss_backward_tensor
-  ~grad
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~neg_log_likelihood
-  ~log_alpha
-  ~blank
-  ~zero_infinity
+      ~grad
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~neg_log_likelihood
+      ~log_alpha
+      ~blank
+      ~zero_infinity
   =
   stubs__ctc_loss_backward_tensor
     grad
@@ -982,14 +982,14 @@ let _ctc_loss_backward_tensor
 ;;
 
 let _ctc_loss_out
-  ~out0
-  ~out1
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~zero_infinity
+      ~out0
+      ~out1
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__ctc_loss_out
@@ -1010,12 +1010,12 @@ let _ctc_loss_out
 ;;
 
 let _ctc_loss_tensor
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~zero_infinity
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__ctc_loss_tensor
@@ -1032,14 +1032,14 @@ let _ctc_loss_tensor
 ;;
 
 let _ctc_loss_tensor_out
-  ~out0
-  ~out1
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~zero_infinity
+      ~out0
+      ~out1
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__ctc_loss_tensor_out
@@ -1057,14 +1057,60 @@ let _ctc_loss_tensor_out
   t0, t1
 ;;
 
+let _cudnn_attention_backward
+      ~grad_out
+      ~query
+      ~key
+      ~value
+      ~out
+      ~logsumexp
+      ~philox_seed
+      ~philox_offset
+      ~attn_bias
+      ~cum_seq_q
+      ~cum_seq_k
+      ~max_q
+      ~max_k
+      ~dropout_p
+      ~is_causal
+      ~scale
+  =
+  let out__ = CArray.make raw_tensor 3 in
+  stubs__cudnn_attention_backward
+    (CArray.start out__)
+    grad_out
+    query
+    key
+    value
+    out
+    logsumexp
+    philox_seed
+    philox_offset
+    attn_bias
+    cum_seq_q
+    cum_seq_k
+    (Int64.of_int max_q)
+    (Int64.of_int max_k)
+    dropout_p
+    (if is_causal then 1 else 0)
+    (Option.value scale ~default:0.0)
+    (match scale with
+     | Some _ -> 0
+     | None -> 1);
+  let t0 = CArray.get out__ 0 |> with_tensor_gc in
+  let t1 = CArray.get out__ 1 |> with_tensor_gc in
+  let t2 = CArray.get out__ 2 |> with_tensor_gc in
+  t0, t1, t2
+;;
+
 let _cudnn_ctc_loss
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~deterministic
-  ~zero_infinity
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__cudnn_ctc_loss
@@ -1084,15 +1130,15 @@ let _cudnn_ctc_loss
 ;;
 
 let _cudnn_ctc_loss_out
-  ~out0
-  ~out1
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~deterministic
-  ~zero_infinity
+      ~out0
+      ~out1
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__cudnn_ctc_loss_out
@@ -1114,13 +1160,13 @@ let _cudnn_ctc_loss_out
 ;;
 
 let _cudnn_ctc_loss_tensor
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~deterministic
-  ~zero_infinity
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__cudnn_ctc_loss_tensor
@@ -1157,22 +1203,22 @@ let _cudnn_init_dropout_state_out ~out ~dropout ~train ~dropout_seed =
 ;;
 
 let _cudnn_rnn
-  input
-  ~weight
-  ~weight_stride0
-  ~weight_buf
-  ~hx
-  ~cx
-  ~mode
-  ~hidden_size
-  ~proj_size
-  ~num_layers
-  ~batch_first
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~dropout_state
+      input
+      ~weight
+      ~weight_stride0
+      ~weight_buf
+      ~hx
+      ~cx
+      ~mode
+      ~hidden_size
+      ~proj_size
+      ~num_layers
+      ~batch_first
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~dropout_state
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__cudnn_rnn
@@ -1211,15 +1257,15 @@ let _cudnn_rnn
 ;;
 
 let _cudnn_rnn_flatten_weight
-  ~weight_arr
-  ~weight_stride0
-  ~input_size
-  ~mode
-  ~hidden_size
-  ~proj_size
-  ~num_layers
-  ~batch_first
-  ~bidirectional
+      ~weight_arr
+      ~weight_stride0
+      ~input_size
+      ~mode
+      ~hidden_size
+      ~proj_size
+      ~num_layers
+      ~batch_first
+      ~bidirectional
   =
   let result =
     stubs__cudnn_rnn_flatten_weight
@@ -1240,16 +1286,16 @@ let _cudnn_rnn_flatten_weight
 ;;
 
 let _cudnn_rnn_flatten_weight_out
-  ~out
-  ~weight_arr
-  ~weight_stride0
-  ~input_size
-  ~mode
-  ~hidden_size
-  ~proj_size
-  ~num_layers
-  ~batch_first
-  ~bidirectional
+      ~out
+      ~weight_arr
+      ~weight_stride0
+      ~input_size
+      ~mode
+      ~hidden_size
+      ~proj_size
+      ~num_layers
+      ~batch_first
+      ~bidirectional
   =
   let result =
     stubs__cudnn_rnn_flatten_weight_out
@@ -1271,27 +1317,27 @@ let _cudnn_rnn_flatten_weight_out
 ;;
 
 let _cudnn_rnn_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~out4
-  input
-  ~weight
-  ~weight_stride0
-  ~weight_buf
-  ~hx
-  ~cx
-  ~mode
-  ~hidden_size
-  ~proj_size
-  ~num_layers
-  ~batch_first
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~dropout_state
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~out4
+      input
+      ~weight
+      ~weight_stride0
+      ~weight_buf
+      ~hx
+      ~cx
+      ~mode
+      ~hidden_size
+      ~proj_size
+      ~num_layers
+      ~batch_first
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~dropout_state
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__cudnn_rnn_out
@@ -1358,12 +1404,12 @@ let _dyn_quant_matmul_4bit ~inp ~packed_weights ~block_size ~in_features ~out_fe
 ;;
 
 let _dyn_quant_pack_4bit_weight
-  ~weights
-  ~scales_zeros
-  ~bias
-  ~block_size
-  ~in_features
-  ~out_features
+      ~weights
+      ~scales_zeros
+      ~bias
+      ~block_size
+      ~in_features
+      ~out_features
   =
   stubs__dyn_quant_pack_4bit_weight
     weights
@@ -1378,26 +1424,26 @@ let _dyn_quant_pack_4bit_weight
 ;;
 
 let _efficient_attention_backward
-  ~grad_out_
-  ~query
-  ~key
-  ~value
-  ~bias
-  ~out
-  ~cu_seqlens_q
-  ~cu_seqlens_k
-  ~max_seqlen_q
-  ~max_seqlen_k
-  ~logsumexp
-  ~dropout_p
-  ~philox_seed
-  ~philox_offset
-  ~custom_mask_type
-  ~bias_requires_grad
-  ~scale
-  ~num_splits_key
-  ~window_size
-  ~shared_storage_dqdkdv
+      ~grad_out_
+      ~query
+      ~key
+      ~value
+      ~bias
+      ~out
+      ~cu_seqlens_q
+      ~cu_seqlens_k
+      ~max_seqlen_q
+      ~max_seqlen_k
+      ~logsumexp
+      ~dropout_p
+      ~philox_seed
+      ~philox_offset
+      ~custom_mask_type
+      ~bias_requires_grad
+      ~scale
+      ~num_splits_key
+      ~window_size
+      ~shared_storage_dqdkdv
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__efficient_attention_backward
@@ -1466,15 +1512,15 @@ let _efficientzerotensor_out ~out ~size =
 ;;
 
 let _embedding_bag
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
-  ~padding_idx
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
+      ~padding_idx
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__embedding_bag
@@ -1498,18 +1544,18 @@ let _embedding_bag
 ;;
 
 let _embedding_bag_backward
-  ~grad
-  ~indices
-  ~offsets
-  ~offset2bag
-  ~bag_size
-  ~maximum_indices
-  ~num_weights
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~padding_idx
+      ~grad
+      ~indices
+      ~offsets
+      ~offset2bag
+      ~bag_size
+      ~maximum_indices
+      ~num_weights
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~padding_idx
   =
   stubs__embedding_bag_backward
     grad
@@ -1530,16 +1576,16 @@ let _embedding_bag_backward
 ;;
 
 let _embedding_bag_dense_backward
-  ~grad
-  ~indices
-  ~offset2bag
-  ~bag_size
-  ~maximum_indices
-  ~num_weights
-  ~scale_grad_by_freq
-  ~mode
-  ~per_sample_weights
-  ~padding_idx
+      ~grad
+      ~indices
+      ~offset2bag
+      ~bag_size
+      ~maximum_indices
+      ~num_weights
+      ~scale_grad_by_freq
+      ~mode
+      ~per_sample_weights
+      ~padding_idx
   =
   stubs__embedding_bag_dense_backward
     grad
@@ -1558,17 +1604,17 @@ let _embedding_bag_dense_backward
 ;;
 
 let _embedding_bag_dense_backward_out
-  ~out
-  ~grad
-  ~indices
-  ~offset2bag
-  ~bag_size
-  ~maximum_indices
-  ~num_weights
-  ~scale_grad_by_freq
-  ~mode
-  ~per_sample_weights
-  ~padding_idx
+      ~out
+      ~grad
+      ~indices
+      ~offset2bag
+      ~bag_size
+      ~maximum_indices
+      ~num_weights
+      ~scale_grad_by_freq
+      ~mode
+      ~per_sample_weights
+      ~padding_idx
   =
   stubs__embedding_bag_dense_backward_out
     out
@@ -1588,15 +1634,15 @@ let _embedding_bag_dense_backward_out
 ;;
 
 let _embedding_bag_forward_only
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
-  ~padding_idx
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
+      ~padding_idx
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__embedding_bag_forward_only
@@ -1620,19 +1666,19 @@ let _embedding_bag_forward_only
 ;;
 
 let _embedding_bag_forward_only_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
-  ~padding_idx
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
+      ~padding_idx
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__embedding_bag_forward_only_out
@@ -1660,19 +1706,19 @@ let _embedding_bag_forward_only_out
 ;;
 
 let _embedding_bag_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
-  ~padding_idx
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
+      ~padding_idx
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__embedding_bag_out
@@ -1700,13 +1746,13 @@ let _embedding_bag_out
 ;;
 
 let _embedding_bag_per_sample_weights_backward
-  ~grad
-  ~weight
-  ~indices
-  ~offsets
-  ~offset2bag
-  ~mode
-  ~padding_idx
+      ~grad
+      ~weight
+      ~indices
+      ~offsets
+      ~offset2bag
+      ~mode
+      ~padding_idx
   =
   stubs__embedding_bag_per_sample_weights_backward
     grad
@@ -1720,14 +1766,14 @@ let _embedding_bag_per_sample_weights_backward
 ;;
 
 let _embedding_bag_per_sample_weights_backward_out
-  ~out
-  ~grad
-  ~weight
-  ~indices
-  ~offsets
-  ~offset2bag
-  ~mode
-  ~padding_idx
+      ~out
+      ~grad
+      ~weight
+      ~indices
+      ~offsets
+      ~offset2bag
+      ~mode
+      ~padding_idx
   =
   stubs__embedding_bag_per_sample_weights_backward_out
     out
@@ -1742,16 +1788,16 @@ let _embedding_bag_per_sample_weights_backward_out
 ;;
 
 let _embedding_bag_sparse_backward
-  ~grad
-  ~indices
-  ~offsets
-  ~offset2bag
-  ~bag_size
-  ~num_weights
-  ~scale_grad_by_freq
-  ~mode
-  ~per_sample_weights
-  ~padding_idx
+      ~grad
+      ~indices
+      ~offsets
+      ~offset2bag
+      ~bag_size
+      ~num_weights
+      ~scale_grad_by_freq
+      ~mode
+      ~per_sample_weights
+      ~padding_idx
   =
   stubs__embedding_bag_sparse_backward
     grad
@@ -1820,13 +1866,13 @@ let _euclidean_dist_out ~out ~x1 ~x2 =
 ;;
 
 let _fake_quantize_learnable_per_channel_affine
-  self
-  ~scale
-  ~zero_point
-  ~axis
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      self
+      ~scale
+      ~zero_point
+      ~axis
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   stubs__fake_quantize_learnable_per_channel_affine
     self
@@ -1840,14 +1886,14 @@ let _fake_quantize_learnable_per_channel_affine
 ;;
 
 let _fake_quantize_learnable_per_channel_affine_backward
-  ~grad
-  self
-  ~scale
-  ~zero_point
-  ~axis
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      ~grad
+      self
+      ~scale
+      ~zero_point
+      ~axis
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__fake_quantize_learnable_per_channel_affine_backward
@@ -1867,14 +1913,14 @@ let _fake_quantize_learnable_per_channel_affine_backward
 ;;
 
 let _fake_quantize_learnable_per_channel_affine_out
-  ~out
-  self
-  ~scale
-  ~zero_point
-  ~axis
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      ~out
+      self
+      ~scale
+      ~zero_point
+      ~axis
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   stubs__fake_quantize_learnable_per_channel_affine_out
     out
@@ -1889,12 +1935,12 @@ let _fake_quantize_learnable_per_channel_affine_out
 ;;
 
 let _fake_quantize_learnable_per_tensor_affine
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   stubs__fake_quantize_learnable_per_tensor_affine
     self
@@ -1907,13 +1953,13 @@ let _fake_quantize_learnable_per_tensor_affine
 ;;
 
 let _fake_quantize_learnable_per_tensor_affine_backward
-  ~grad
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      ~grad
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__fake_quantize_learnable_per_tensor_affine_backward
@@ -1932,13 +1978,13 @@ let _fake_quantize_learnable_per_tensor_affine_backward
 ;;
 
 let _fake_quantize_learnable_per_tensor_affine_out
-  ~out
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
-  ~grad_factor
+      ~out
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
+      ~grad_factor
   =
   stubs__fake_quantize_learnable_per_tensor_affine_out
     out
@@ -1952,12 +1998,12 @@ let _fake_quantize_learnable_per_tensor_affine_out
 ;;
 
 let _fake_quantize_per_tensor_affine_cachemask_tensor_qparams
-  self
-  ~scale
-  ~zero_point
-  ~fake_quant_enabled
-  ~quant_min
-  ~quant_max
+      self
+      ~scale
+      ~zero_point
+      ~fake_quant_enabled
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__fake_quantize_per_tensor_affine_cachemask_tensor_qparams
@@ -1974,14 +2020,14 @@ let _fake_quantize_per_tensor_affine_cachemask_tensor_qparams
 ;;
 
 let _fake_quantize_per_tensor_affine_cachemask_tensor_qparams_out
-  ~out0
-  ~out1
-  self
-  ~scale
-  ~zero_point
-  ~fake_quant_enabled
-  ~quant_min
-  ~quant_max
+      ~out0
+      ~out1
+      self
+      ~scale
+      ~zero_point
+      ~fake_quant_enabled
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__fake_quantize_per_tensor_affine_cachemask_tensor_qparams_out
@@ -2072,23 +2118,23 @@ let _fill_mem_eff_dropout_mask_ self ~dropout_p ~seed ~offset =
 ;;
 
 let _flash_attention_backward
-  ~grad_out
-  ~query
-  ~key
-  ~value
-  ~out
-  ~logsumexp
-  ~cum_seq_q
-  ~cum_seq_k
-  ~max_q
-  ~max_k
-  ~dropout_p
-  ~is_causal
-  ~rng_state
-  ~unused
-  ~scale
-  ~window_size_left
-  ~window_size_right
+      ~grad_out
+      ~query
+      ~key
+      ~value
+      ~out
+      ~logsumexp
+      ~cum_seq_q
+      ~cum_seq_k
+      ~max_q
+      ~max_k
+      ~dropout_p
+      ~is_causal
+      ~rng_state
+      ~unused
+      ~scale
+      ~window_size_left
+      ~window_size_right
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__flash_attention_backward
@@ -2127,6 +2173,76 @@ let _flash_attention_backward
   let t1 = CArray.get out__ 1 |> with_tensor_gc in
   let t2 = CArray.get out__ 2 |> with_tensor_gc in
   t0, t1, t2
+;;
+
+let _flash_attention_forward_no_dropout_inplace
+      ~out
+      ~query
+      ~key
+      ~value
+      ~cum_seq_q
+      ~cum_seq_k
+      ~max_q
+      ~max_k
+      ~dropout_p
+      ~is_causal
+      ~return_debug_mask
+      ~scale
+      ~window_size_left
+      ~window_size_right
+      ~seqused_k
+      ~alibi_slopes
+      ~block_table
+      ~num_splits
+  =
+  stubs__flash_attention_forward_no_dropout_inplace
+    out
+    query
+    key
+    value
+    (match cum_seq_q with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (match cum_seq_k with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (Int64.of_int max_q)
+    (Int64.of_int max_k)
+    dropout_p
+    (if is_causal then 1 else 0)
+    (if return_debug_mask then 1 else 0)
+    (Option.value scale ~default:0.0)
+    (match scale with
+     | Some _ -> 0
+     | None -> 1)
+    (match window_size_left with
+     | None -> Int64.zero
+     | Some v -> Int64.of_int v)
+    (match window_size_left with
+     | Some _ -> 0
+     | None -> 1)
+    (match window_size_right with
+     | None -> Int64.zero
+     | Some v -> Int64.of_int v)
+    (match window_size_right with
+     | Some _ -> 0
+     | None -> 1)
+    (match seqused_k with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (match alibi_slopes with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (match block_table with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (match num_splits with
+     | None -> Int64.zero
+     | Some v -> Int64.of_int v)
+    (match num_splits with
+     | Some _ -> 0
+     | None -> 1)
+  |> with_tensor_gc
 ;;
 
 let _foobar self ~arg1 ~arg2 ~arg3 =
@@ -2195,18 +2311,18 @@ let _functional_sym_constrain_range_for_size ~size ~min ~max ~dep_token =
 ;;
 
 let _fused_adagrad
-  ~out
-  self
-  ~grads
-  ~state_sums
-  ~state_steps
-  ~lr
-  ~lr_decay
-  ~weight_decay
-  ~eps
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~state_sums
+      ~state_steps
+      ~lr
+      ~lr_decay
+      ~weight_decay
+      ~eps
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adagrad
@@ -2241,17 +2357,17 @@ let _fused_adagrad
 ;;
 
 let _fused_adagrad_
-  self
-  ~grads
-  ~state_sums
-  ~state_steps
-  ~lr
-  ~lr_decay
-  ~weight_decay
-  ~eps
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~state_sums
+      ~state_steps
+      ~lr
+      ~lr_decay
+      ~weight_decay
+      ~eps
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adagrad_
@@ -2282,23 +2398,111 @@ let _fused_adagrad_
   result
 ;;
 
+let _fused_adagrad_tensor_lr_
+      self
+      ~grads
+      ~state_sums
+      ~state_steps
+      ~lr
+      ~lr_decay
+      ~weight_decay
+      ~eps
+      ~maximize
+      ~grad_scale
+      ~found_inf
+  =
+  let result =
+    stubs__fused_adagrad_tensor_lr_
+      (CArray.of_list gc_tensor self |> CArray.start)
+      (List.length self)
+      (CArray.of_list gc_tensor grads |> CArray.start)
+      (List.length grads)
+      (CArray.of_list gc_tensor state_sums |> CArray.start)
+      (List.length state_sums)
+      (CArray.of_list gc_tensor state_steps |> CArray.start)
+      (List.length state_steps)
+      lr
+      lr_decay
+      weight_decay
+      eps
+      (if maximize then 1 else 0)
+      (match grad_scale with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (match found_inf with
+       | Some v -> v
+       | None -> none_gc_tensor)
+  in
+  keep_values_alive self;
+  keep_values_alive grads;
+  keep_values_alive state_sums;
+  keep_values_alive state_steps;
+  result
+;;
+
+let _fused_adagrad_tensor_lr_out
+      ~out
+      self
+      ~grads
+      ~state_sums
+      ~state_steps
+      ~lr
+      ~lr_decay
+      ~weight_decay
+      ~eps
+      ~maximize
+      ~grad_scale
+      ~found_inf
+  =
+  let result =
+    stubs__fused_adagrad_tensor_lr_out
+      (CArray.of_list gc_tensor out |> CArray.start)
+      (List.length out)
+      (CArray.of_list gc_tensor self |> CArray.start)
+      (List.length self)
+      (CArray.of_list gc_tensor grads |> CArray.start)
+      (List.length grads)
+      (CArray.of_list gc_tensor state_sums |> CArray.start)
+      (List.length state_sums)
+      (CArray.of_list gc_tensor state_steps |> CArray.start)
+      (List.length state_steps)
+      lr
+      lr_decay
+      weight_decay
+      eps
+      (if maximize then 1 else 0)
+      (match grad_scale with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (match found_inf with
+       | Some v -> v
+       | None -> none_gc_tensor)
+  in
+  keep_values_alive out;
+  keep_values_alive self;
+  keep_values_alive grads;
+  keep_values_alive state_sums;
+  keep_values_alive state_steps;
+  result
+;;
+
 let _fused_adam
-  ~out
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adam
@@ -2341,21 +2545,21 @@ let _fused_adam
 ;;
 
 let _fused_adam_
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adam_
@@ -2395,21 +2599,21 @@ let _fused_adam_
 ;;
 
 let _fused_adam_tensor_lr_
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adam_tensor_lr_
@@ -2449,22 +2653,22 @@ let _fused_adam_tensor_lr_
 ;;
 
 let _fused_adam_tensor_lr_out
-  ~out
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adam_tensor_lr_out
@@ -2507,22 +2711,22 @@ let _fused_adam_tensor_lr_out
 ;;
 
 let _fused_adamw
-  ~out
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adamw
@@ -2565,21 +2769,21 @@ let _fused_adamw
 ;;
 
 let _fused_adamw_
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adamw_
@@ -2619,21 +2823,21 @@ let _fused_adamw_
 ;;
 
 let _fused_adamw_tensor_lr_
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adamw_tensor_lr_
@@ -2673,22 +2877,22 @@ let _fused_adamw_tensor_lr_
 ;;
 
 let _fused_adamw_tensor_lr_out
-  ~out
-  self
-  ~grads
-  ~exp_avgs
-  ~exp_avg_sqs
-  ~max_exp_avg_sqs
-  ~state_steps
-  ~lr
-  ~beta1
-  ~beta2
-  ~weight_decay
-  ~eps
-  ~amsgrad
-  ~maximize
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~exp_avgs
+      ~exp_avg_sqs
+      ~max_exp_avg_sqs
+      ~state_steps
+      ~lr
+      ~beta1
+      ~beta2
+      ~weight_decay
+      ~eps
+      ~amsgrad
+      ~maximize
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_adamw_tensor_lr_out
@@ -2747,19 +2951,19 @@ let _fused_dropout_out ~out0 ~out1 self ~p =
 ;;
 
 let _fused_moving_avg_obs_fq_helper
-  self
-  ~observer_on
-  ~fake_quant_on
-  ~running_min
-  ~running_max
-  ~scale
-  ~zero_point
-  ~averaging_const
-  ~quant_min
-  ~quant_max
-  ~ch_axis
-  ~per_row_fake_quant
-  ~symmetric_quant
+      self
+      ~observer_on
+      ~fake_quant_on
+      ~running_min
+      ~running_max
+      ~scale
+      ~zero_point
+      ~averaging_const
+      ~quant_min
+      ~quant_max
+      ~ch_axis
+      ~per_row_fake_quant
+      ~symmetric_quant
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__fused_moving_avg_obs_fq_helper
@@ -2783,19 +2987,19 @@ let _fused_moving_avg_obs_fq_helper
 ;;
 
 let _fused_moving_avg_obs_fq_helper_functional
-  self
-  ~observer_on
-  ~fake_quant_on
-  ~running_min
-  ~running_max
-  ~scale
-  ~zero_point
-  ~averaging_const
-  ~quant_min
-  ~quant_max
-  ~ch_axis
-  ~per_row_fake_quant
-  ~symmetric_quant
+      self
+      ~observer_on
+      ~fake_quant_on
+      ~running_min
+      ~running_max
+      ~scale
+      ~zero_point
+      ~averaging_const
+      ~quant_min
+      ~quant_max
+      ~ch_axis
+      ~per_row_fake_quant
+      ~symmetric_quant
   =
   let out__ = CArray.make raw_tensor 6 in
   stubs__fused_moving_avg_obs_fq_helper_functional
@@ -2823,21 +3027,21 @@ let _fused_moving_avg_obs_fq_helper_functional
 ;;
 
 let _fused_moving_avg_obs_fq_helper_out
-  ~out0
-  ~out1
-  self
-  ~observer_on
-  ~fake_quant_on
-  ~running_min
-  ~running_max
-  ~scale
-  ~zero_point
-  ~averaging_const
-  ~quant_min
-  ~quant_max
-  ~ch_axis
-  ~per_row_fake_quant
-  ~symmetric_quant
+      ~out0
+      ~out1
+      self
+      ~observer_on
+      ~fake_quant_on
+      ~running_min
+      ~running_max
+      ~scale
+      ~zero_point
+      ~averaging_const
+      ~quant_min
+      ~quant_max
+      ~ch_axis
+      ~per_row_fake_quant
+      ~symmetric_quant
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__fused_moving_avg_obs_fq_helper_out
@@ -2862,15 +3066,34 @@ let _fused_moving_avg_obs_fq_helper_out
   t0, t1
 ;;
 
+let _fused_rms_norm input ~normalized_shape ~weight ~eps =
+  let out__ = CArray.make raw_tensor 2 in
+  stubs__fused_rms_norm
+    (CArray.start out__)
+    input
+    (List.map Int64.of_int normalized_shape |> CArray.of_list int64_t |> CArray.start)
+    (List.length normalized_shape)
+    (match weight with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (Option.value eps ~default:0.0)
+    (match eps with
+     | Some _ -> 0
+     | None -> 1);
+  let t0 = CArray.get out__ 0 |> with_tensor_gc in
+  let t1 = CArray.get out__ 1 |> with_tensor_gc in
+  t0, t1
+;;
+
 let _fused_sdp_choice
-  ~query
-  ~key
-  ~value
-  ~attn_mask
-  ~dropout_p
-  ~is_causal
-  ~scale
-  ~enable_gqa
+      ~query
+      ~key
+      ~value
+      ~attn_mask
+      ~dropout_p
+      ~is_causal
+      ~scale
+      ~enable_gqa
   =
   stubs__fused_sdp_choice
     query
@@ -2889,19 +3112,19 @@ let _fused_sdp_choice
 ;;
 
 let _fused_sgd
-  ~out
-  self
-  ~grads
-  ~momentum_buffer_list
-  ~weight_decay
-  ~momentum
-  ~lr
-  ~dampening
-  ~nesterov
-  ~maximize
-  ~is_first_step
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~momentum_buffer_list
+      ~weight_decay
+      ~momentum
+      ~lr
+      ~dampening
+      ~nesterov
+      ~maximize
+      ~is_first_step
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_sgd
@@ -2935,18 +3158,18 @@ let _fused_sgd
 ;;
 
 let _fused_sgd_
-  self
-  ~grads
-  ~momentum_buffer_list
-  ~weight_decay
-  ~momentum
-  ~lr
-  ~dampening
-  ~nesterov
-  ~maximize
-  ~is_first_step
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~momentum_buffer_list
+      ~weight_decay
+      ~momentum
+      ~lr
+      ~dampening
+      ~nesterov
+      ~maximize
+      ~is_first_step
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_sgd_
@@ -2977,18 +3200,18 @@ let _fused_sgd_
 ;;
 
 let _fused_sgd_tensor_lr_
-  self
-  ~grads
-  ~momentum_buffer_list
-  ~weight_decay
-  ~momentum
-  ~lr
-  ~dampening
-  ~nesterov
-  ~maximize
-  ~is_first_step
-  ~grad_scale
-  ~found_inf
+      self
+      ~grads
+      ~momentum_buffer_list
+      ~weight_decay
+      ~momentum
+      ~lr
+      ~dampening
+      ~nesterov
+      ~maximize
+      ~is_first_step
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_sgd_tensor_lr_
@@ -3019,19 +3242,19 @@ let _fused_sgd_tensor_lr_
 ;;
 
 let _fused_sgd_tensor_lr_out
-  ~out
-  self
-  ~grads
-  ~momentum_buffer_list
-  ~weight_decay
-  ~momentum
-  ~lr
-  ~dampening
-  ~nesterov
-  ~maximize
-  ~is_first_step
-  ~grad_scale
-  ~found_inf
+      ~out
+      self
+      ~grads
+      ~momentum_buffer_list
+      ~weight_decay
+      ~momentum
+      ~lr
+      ~dampening
+      ~nesterov
+      ~maximize
+      ~is_first_step
+      ~grad_scale
+      ~found_inf
   =
   let result =
     stubs__fused_sgd_tensor_lr_out
@@ -3079,11 +3302,11 @@ let _gather_sparse_backward self ~dim ~index ~grad =
 ;;
 
 let _grid_sampler_2d_cpu_fallback
-  input
-  ~grid
-  ~interpolation_mode
-  ~padding_mode
-  ~align_corners
+      input
+      ~grid
+      ~interpolation_mode
+      ~padding_mode
+      ~align_corners
   =
   stubs__grid_sampler_2d_cpu_fallback
     input
@@ -3095,12 +3318,12 @@ let _grid_sampler_2d_cpu_fallback
 ;;
 
 let _grid_sampler_2d_cpu_fallback_backward
-  ~grad_output
-  input
-  ~grid
-  ~interpolation_mode
-  ~padding_mode
-  ~align_corners
+      ~grad_output
+      input
+      ~grid
+      ~interpolation_mode
+      ~padding_mode
+      ~align_corners
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__grid_sampler_2d_cpu_fallback_backward
@@ -3117,12 +3340,12 @@ let _grid_sampler_2d_cpu_fallback_backward
 ;;
 
 let _grid_sampler_2d_cpu_fallback_out
-  ~out
-  input
-  ~grid
-  ~interpolation_mode
-  ~padding_mode
-  ~align_corners
+      ~out
+      input
+      ~grid
+      ~interpolation_mode
+      ~padding_mode
+      ~align_corners
   =
   stubs__grid_sampler_2d_cpu_fallback_out
     out
@@ -3131,6 +3354,20 @@ let _grid_sampler_2d_cpu_fallback_out
     (Int64.of_int interpolation_mode)
     (Int64.of_int padding_mode)
     (if align_corners then 1 else 0)
+  |> with_tensor_gc
+;;
+
+let _grouped_mm self ~mat2 ~offs ~bias ~out_dtype =
+  stubs__grouped_mm
+    self
+    mat2
+    (match offs with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (match bias with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    (Kind.packed_to_int out_dtype)
   |> with_tensor_gc
 ;;
 
@@ -3420,15 +3657,15 @@ let _logcumsumexp_out ~out self ~dim =
 ;;
 
 let _lstm_mps
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 6 in
   stubs__lstm_mps
@@ -3456,21 +3693,21 @@ let _lstm_mps
 ;;
 
 let _lstm_mps_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~out4
-  ~out5
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~out4
+      ~out5
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 6 in
   stubs__lstm_mps_out
@@ -3715,13 +3952,13 @@ let _mps_convolution_out ~out self ~weight ~bias ~padding ~stride ~dilation ~gro
 ;;
 
 let _mps_convolution_transpose
-  self
-  ~weight
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
+      self
+      ~weight
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
   =
   stubs__mps_convolution_transpose
     self
@@ -3739,14 +3976,14 @@ let _mps_convolution_transpose
 ;;
 
 let _mps_convolution_transpose_out
-  ~out
-  self
-  ~weight
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
+      ~out
+      self
+      ~weight
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
   =
   stubs__mps_convolution_transpose_out
     out
@@ -3765,14 +4002,14 @@ let _mps_convolution_transpose_out
 ;;
 
 let _native_batch_norm_legit
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__native_batch_norm_legit
@@ -3796,14 +4033,14 @@ let _native_batch_norm_legit
 ;;
 
 let _native_batch_norm_legit_functional
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__native_batch_norm_legit_functional
@@ -3849,15 +4086,15 @@ let _native_batch_norm_legit_no_stats input ~weight ~bias ~training ~momentum ~e
 ;;
 
 let _native_batch_norm_legit_no_stats_out
-  ~out
-  ~save_mean
-  ~save_invstd
-  input
-  ~weight
-  ~bias
-  ~training
-  ~momentum
-  ~eps
+      ~out
+      ~save_mean
+      ~save_invstd
+      input
+      ~weight
+      ~bias
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__native_batch_norm_legit_no_stats_out
@@ -3882,13 +4119,13 @@ let _native_batch_norm_legit_no_stats_out
 ;;
 
 let _native_batch_norm_legit_no_training
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__native_batch_norm_legit_no_training
@@ -3911,16 +4148,16 @@ let _native_batch_norm_legit_no_training
 ;;
 
 let _native_batch_norm_legit_no_training_out
-  ~out0
-  ~out1
-  ~out2
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
+      ~out0
+      ~out1
+      ~out2
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__native_batch_norm_legit_no_training_out
@@ -3946,17 +4183,17 @@ let _native_batch_norm_legit_no_training_out
 ;;
 
 let _native_batch_norm_legit_out
-  ~out
-  ~save_mean
-  ~save_invstd
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
+      ~out
+      ~save_mean
+      ~save_invstd
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__native_batch_norm_legit_out
@@ -3983,19 +4220,19 @@ let _native_batch_norm_legit_out
 ;;
 
 let _native_multi_head_attention
-  ~query
-  ~key
-  ~value
-  ~embed_dim
-  ~num_head
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~mask
-  ~need_weights
-  ~average_attn_weights
-  ~mask_type
+      ~query
+      ~key
+      ~value
+      ~embed_dim
+      ~num_head
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~mask
+      ~need_weights
+      ~average_attn_weights
+      ~mask_type
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__native_multi_head_attention
@@ -4026,21 +4263,21 @@ let _native_multi_head_attention
 ;;
 
 let _native_multi_head_attention_out
-  ~out0
-  ~out1
-  ~query
-  ~key
-  ~value
-  ~embed_dim
-  ~num_head
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~mask
-  ~need_weights
-  ~average_attn_weights
-  ~mask_type
+      ~out0
+      ~out1
+      ~query
+      ~key
+      ~value
+      ~embed_dim
+      ~num_head
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~mask
+      ~need_weights
+      ~average_attn_weights
+      ~mask_type
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__native_multi_head_attention_out
@@ -4110,13 +4347,13 @@ let _nested_from_padded_out ~out ~padded ~cpu_nested_shape_example ~fuse_transfo
 ;;
 
 let _nested_from_padded_tensor
-  ~padded
-  ~offsets
-  ~dummy
-  ~ragged_idx
-  ~min_seqlen
-  ~max_seqlen
-  ~sum_s
+      ~padded
+      ~offsets
+      ~dummy
+      ~ragged_idx
+      ~min_seqlen
+      ~max_seqlen
+      ~sum_s
   =
   stubs__nested_from_padded_tensor
     padded
@@ -4185,13 +4422,13 @@ let _nested_view_from_buffer_copy_out ~out self ~nested_size ~nested_strides ~of
 ;;
 
 let _nested_view_from_jagged
-  self
-  ~offsets
-  ~dummy
-  ~lengths
-  ~ragged_idx
-  ~min_seqlen
-  ~max_seqlen
+      self
+      ~offsets
+      ~dummy
+      ~lengths
+      ~ragged_idx
+      ~min_seqlen
+      ~max_seqlen
   =
   stubs__nested_view_from_jagged
     self
@@ -4211,13 +4448,13 @@ let _nested_view_from_jagged
 ;;
 
 let _nested_view_from_jagged_copy
-  self
-  ~offsets
-  ~dummy
-  ~lengths
-  ~ragged_idx
-  ~min_seqlen
-  ~max_seqlen
+      self
+      ~offsets
+      ~dummy
+      ~lengths
+      ~ragged_idx
+      ~min_seqlen
+      ~max_seqlen
   =
   stubs__nested_view_from_jagged_copy
     self
@@ -4237,14 +4474,14 @@ let _nested_view_from_jagged_copy
 ;;
 
 let _nested_view_from_jagged_copy_out
-  ~out
-  self
-  ~offsets
-  ~dummy
-  ~lengths
-  ~ragged_idx
-  ~min_seqlen
-  ~max_seqlen
+      ~out
+      self
+      ~offsets
+      ~dummy
+      ~lengths
+      ~ragged_idx
+      ~min_seqlen
+      ~max_seqlen
   =
   stubs__nested_view_from_jagged_copy_out
     out
@@ -4390,6 +4627,38 @@ let _pdist_backward_out ~out ~grad self ~p ~pdist =
   stubs__pdist_backward_out out grad self p pdist |> with_tensor_gc
 ;;
 
+let _philox_key_fold_in ~key ~data =
+  stubs__philox_key_fold_in key (Int64.of_int data) |> with_tensor_gc
+;;
+
+let _philox_key_split ~key ~num_splits =
+  stubs__philox_key_split key (Int64.of_int num_splits) |> with_tensor_gc
+;;
+
+let _philox_normal self ~key ~mean ~std =
+  stubs__philox_normal self key mean std |> with_tensor_gc
+;;
+
+let _philox_normal_ self ~key ~mean ~std =
+  stubs__philox_normal_ self key mean std |> with_tensor_gc
+;;
+
+let _philox_normal_out ~out self ~key ~mean ~std =
+  stubs__philox_normal_out out self key mean std |> with_tensor_gc
+;;
+
+let _philox_uniform self ~key ~low ~high =
+  stubs__philox_uniform self key low high |> with_tensor_gc
+;;
+
+let _philox_uniform_ self ~key ~low ~high =
+  stubs__philox_uniform_ self key low high |> with_tensor_gc
+;;
+
+let _philox_uniform_out ~out self ~key ~low ~high =
+  stubs__philox_uniform_out out self key low high |> with_tensor_gc
+;;
+
 let _pin_memory self ~device =
   stubs__pin_memory self (Device.option_to_int device) |> with_tensor_gc
 ;;
@@ -4518,15 +4787,15 @@ let _saturate_weight_to_fp16 ~weight =
 ;;
 
 let _scaled_dot_product_attention_math
-  ~query
-  ~key
-  ~value
-  ~attn_mask
-  ~dropout_p
-  ~is_causal
-  ~dropout_mask
-  ~scale
-  ~enable_gqa
+      ~query
+      ~key
+      ~value
+      ~attn_mask
+      ~dropout_p
+      ~is_causal
+      ~dropout_mask
+      ~scale
+      ~enable_gqa
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__scaled_dot_product_attention_math
@@ -4553,14 +4822,15 @@ let _scaled_dot_product_attention_math
 ;;
 
 let _scaled_dot_product_attention_math_for_mps
-  ~query
-  ~key
-  ~value
-  ~attn_mask
-  ~dropout_p
-  ~is_causal
-  ~dropout_mask
-  ~scale
+      ~query
+      ~key
+      ~value
+      ~attn_mask
+      ~dropout_p
+      ~is_causal
+      ~dropout_mask
+      ~scale
+      ~enable_gqa
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__scaled_dot_product_attention_math_for_mps
@@ -4579,29 +4849,30 @@ let _scaled_dot_product_attention_math_for_mps
     (Option.value scale ~default:0.0)
     (match scale with
      | Some _ -> 0
-     | None -> 1);
+     | None -> 1)
+    (if enable_gqa then 1 else 0);
   let t0 = CArray.get out__ 0 |> with_tensor_gc in
   let t1 = CArray.get out__ 1 |> with_tensor_gc in
   t0, t1
 ;;
 
 let _scaled_dot_product_cudnn_attention_backward
-  ~grad_out
-  ~query
-  ~key
-  ~value
-  ~out
-  ~logsumexp
-  ~philox_seed
-  ~philox_offset
-  ~attn_bias
-  ~cum_seq_q
-  ~cum_seq_k
-  ~max_q
-  ~max_k
-  ~dropout_p
-  ~is_causal
-  ~scale
+      ~grad_out
+      ~query
+      ~key
+      ~value
+      ~out
+      ~logsumexp
+      ~philox_seed
+      ~philox_offset
+      ~attn_bias
+      ~cum_seq_q
+      ~cum_seq_k
+      ~max_q
+      ~max_k
+      ~dropout_p
+      ~is_causal
+      ~scale
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__scaled_dot_product_cudnn_attention_backward
@@ -4632,14 +4903,14 @@ let _scaled_dot_product_cudnn_attention_backward
 ;;
 
 let _scaled_dot_product_efficient_attention
-  ~query
-  ~key
-  ~value
-  ~attn_bias
-  ~compute_log_sumexp
-  ~dropout_p
-  ~is_causal
-  ~scale
+      ~query
+      ~key
+      ~value
+      ~attn_bias
+      ~compute_log_sumexp
+      ~dropout_p
+      ~is_causal
+      ~scale
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs__scaled_dot_product_efficient_attention
@@ -4665,21 +4936,21 @@ let _scaled_dot_product_efficient_attention
 ;;
 
 let _scaled_dot_product_flash_attention_backward
-  ~grad_out
-  ~query
-  ~key
-  ~value
-  ~out
-  ~logsumexp
-  ~cum_seq_q
-  ~cum_seq_k
-  ~max_q
-  ~max_k
-  ~dropout_p
-  ~is_causal
-  ~philox_seed
-  ~philox_offset
-  ~scale
+      ~grad_out
+      ~query
+      ~key
+      ~value
+      ~out
+      ~logsumexp
+      ~cum_seq_q
+      ~cum_seq_k
+      ~max_q
+      ~max_k
+      ~dropout_p
+      ~is_causal
+      ~philox_seed
+      ~philox_offset
+      ~scale
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__scaled_dot_product_flash_attention_backward
@@ -4709,13 +4980,13 @@ let _scaled_dot_product_flash_attention_backward
 ;;
 
 let _scaled_dot_product_flash_attention_for_cpu
-  ~query
-  ~key
-  ~value
-  ~dropout_p
-  ~is_causal
-  ~attn_mask
-  ~scale
+      ~query
+      ~key
+      ~value
+      ~dropout_p
+      ~is_causal
+      ~attn_mask
+      ~scale
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__scaled_dot_product_flash_attention_for_cpu
@@ -4738,16 +5009,16 @@ let _scaled_dot_product_flash_attention_for_cpu
 ;;
 
 let _scaled_dot_product_flash_attention_for_cpu_backward
-  ~grad_out
-  ~query
-  ~key
-  ~value
-  ~out
-  ~logsumexp
-  ~dropout_p
-  ~is_causal
-  ~attn_mask
-  ~scale
+      ~grad_out
+      ~query
+      ~key
+      ~value
+      ~out
+      ~logsumexp
+      ~dropout_p
+      ~is_causal
+      ~attn_mask
+      ~scale
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__scaled_dot_product_flash_attention_for_cpu_backward
@@ -4774,15 +5045,15 @@ let _scaled_dot_product_flash_attention_for_cpu_backward
 ;;
 
 let _scaled_grouped_mm
-  self
-  ~mat2
-  ~scale_a
-  ~scale_b
-  ~offs
-  ~bias
-  ~scale_result
-  ~out_dtype
-  ~use_fast_accum
+      self
+      ~mat2
+      ~scale_a
+      ~scale_b
+      ~offs
+      ~bias
+      ~scale_result
+      ~out_dtype
+      ~use_fast_accum
   =
   stubs__scaled_grouped_mm
     self
@@ -4801,6 +5072,54 @@ let _scaled_grouped_mm
     (Kind.packed_to_int out_dtype)
     (if use_fast_accum then 1 else 0)
   |> with_tensor_gc
+;;
+
+let _scaled_grouped_mm_v2
+      self
+      ~mat2
+      ~scale_a
+      ~recipe_a
+      ~swizzle_a
+      ~scale_b
+      ~recipe_b
+      ~swizzle_b
+      ~offs
+      ~bias
+      ~out_dtype
+      ~contraction_dim
+      ~use_fast_accum
+  =
+  let result =
+    stubs__scaled_grouped_mm_v2
+      self
+      mat2
+      (CArray.of_list gc_tensor scale_a |> CArray.start)
+      (List.length scale_a)
+      (List.map Int64.of_int recipe_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_a)
+      (List.map Int64.of_int swizzle_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_a)
+      (CArray.of_list gc_tensor scale_b |> CArray.start)
+      (List.length scale_b)
+      (List.map Int64.of_int recipe_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_b)
+      (List.map Int64.of_int swizzle_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_b)
+      (match offs with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (match bias with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (Kind.packed_to_int out_dtype)
+      (List.map Int64.of_int contraction_dim |> CArray.of_list int64_t |> CArray.start)
+      (List.length contraction_dim)
+      (if use_fast_accum then 1 else 0)
+    |> with_tensor_gc
+  in
+  keep_values_alive scale_a;
+  keep_values_alive scale_b;
+  result
 ;;
 
 let _scaled_mm self ~mat2 ~scale_a ~scale_b ~bias ~scale_result ~out_dtype ~use_fast_accum
@@ -4822,15 +5141,15 @@ let _scaled_mm self ~mat2 ~scale_a ~scale_b ~bias ~scale_result ~out_dtype ~use_
 ;;
 
 let _scaled_mm_out
-  ~out
-  self
-  ~mat2
-  ~scale_a
-  ~scale_b
-  ~bias
-  ~scale_result
-  ~out_dtype
-  ~use_fast_accum
+      ~out
+      self
+      ~mat2
+      ~scale_a
+      ~scale_b
+      ~bias
+      ~scale_result
+      ~out_dtype
+      ~use_fast_accum
   =
   stubs__scaled_mm_out
     out
@@ -4847,6 +5166,96 @@ let _scaled_mm_out
     (Kind.packed_to_int out_dtype)
     (if use_fast_accum then 1 else 0)
   |> with_tensor_gc
+;;
+
+let _scaled_mm_v2
+      self
+      ~mat2
+      ~scale_a
+      ~recipe_a
+      ~swizzle_a
+      ~scale_b
+      ~recipe_b
+      ~swizzle_b
+      ~bias
+      ~out_dtype
+      ~contraction_dim
+      ~use_fast_accum
+  =
+  let result =
+    stubs__scaled_mm_v2
+      self
+      mat2
+      (CArray.of_list gc_tensor scale_a |> CArray.start)
+      (List.length scale_a)
+      (List.map Int64.of_int recipe_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_a)
+      (List.map Int64.of_int swizzle_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_a)
+      (CArray.of_list gc_tensor scale_b |> CArray.start)
+      (List.length scale_b)
+      (List.map Int64.of_int recipe_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_b)
+      (List.map Int64.of_int swizzle_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_b)
+      (match bias with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (Kind.packed_to_int out_dtype)
+      (List.map Int64.of_int contraction_dim |> CArray.of_list int64_t |> CArray.start)
+      (List.length contraction_dim)
+      (if use_fast_accum then 1 else 0)
+    |> with_tensor_gc
+  in
+  keep_values_alive scale_a;
+  keep_values_alive scale_b;
+  result
+;;
+
+let _scaled_mm_v2_out
+      ~out
+      self
+      ~mat2
+      ~scale_a
+      ~recipe_a
+      ~swizzle_a
+      ~scale_b
+      ~recipe_b
+      ~swizzle_b
+      ~bias
+      ~out_dtype
+      ~contraction_dim
+      ~use_fast_accum
+  =
+  let result =
+    stubs__scaled_mm_v2_out
+      out
+      self
+      mat2
+      (CArray.of_list gc_tensor scale_a |> CArray.start)
+      (List.length scale_a)
+      (List.map Int64.of_int recipe_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_a)
+      (List.map Int64.of_int swizzle_a |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_a)
+      (CArray.of_list gc_tensor scale_b |> CArray.start)
+      (List.length scale_b)
+      (List.map Int64.of_int recipe_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length recipe_b)
+      (List.map Int64.of_int swizzle_b |> CArray.of_list int64_t |> CArray.start)
+      (List.length swizzle_b)
+      (match bias with
+       | Some v -> v
+       | None -> none_gc_tensor)
+      (Kind.packed_to_int out_dtype)
+      (List.map Int64.of_int contraction_dim |> CArray.of_list int64_t |> CArray.start)
+      (List.length contraction_dim)
+      (if use_fast_accum then 1 else 0)
+    |> with_tensor_gc
+  in
+  keep_values_alive scale_a;
+  keep_values_alive scale_b;
+  result
 ;;
 
 let _scatter_reduce self ~dim ~index ~src ~reduce ~include_self =
@@ -4901,15 +5310,15 @@ let _segment_reduce_backward ~grad ~output ~data ~reduce ~lengths ~offsets ~axis
 ;;
 
 let _segment_reduce_backward_out
-  ~out
-  ~grad
-  ~output
-  ~data
-  ~reduce
-  ~lengths
-  ~offsets
-  ~axis
-  ~initial
+      ~out
+      ~grad
+      ~output
+      ~data
+      ~reduce
+      ~lengths
+      ~offsets
+      ~axis
+      ~initial
   =
   stubs__segment_reduce_backward_out
     out
@@ -4931,15 +5340,15 @@ let _segment_reduce_backward_out
 let _shape_as_tensor self = stubs__shape_as_tensor self |> with_tensor_gc
 
 let _slow_conv2d_backward
-  ~grad_input
-  ~grad_weight
-  ~grad_bias
-  ~grad_output
-  self
-  ~weight
-  ~kernel_size
-  ~stride
-  ~padding
+      ~grad_input
+      ~grad_weight
+      ~grad_bias
+      ~grad_output
+      self
+      ~weight
+      ~kernel_size
+      ~stride
+      ~padding
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__slow_conv2d_backward
@@ -5103,11 +5512,11 @@ let _sparse_bsr_tensor_unsafe ~crow_indices ~col_indices ~values ~size ~options 
 ;;
 
 let _sparse_compressed_tensor_unsafe
-  ~compressed_indices
-  ~plain_indices
-  ~values
-  ~size
-  ~options
+      ~compressed_indices
+      ~plain_indices
+      ~values
+      ~size
+      ~options
   =
   stubs__sparse_compressed_tensor_unsafe
     compressed_indices
@@ -5121,12 +5530,12 @@ let _sparse_compressed_tensor_unsafe
 ;;
 
 let _sparse_compressed_tensor_with_dims
-  ~nnz
-  ~dense_dim
-  ~size
-  ~blocksize
-  ~index_dtype
-  ~options
+      ~nnz
+      ~dense_dim
+      ~size
+      ~blocksize
+      ~index_dtype
+      ~options
   =
   stubs__sparse_compressed_tensor_with_dims
     (Int64.of_int nnz)
@@ -5165,13 +5574,13 @@ let _sparse_coo_tensor_with_dims ~sparse_dim ~dense_dim ~size ~options =
 ;;
 
 let _sparse_coo_tensor_with_dims_and_tensors
-  ~sparse_dim
-  ~dense_dim
-  ~size
-  ~indices
-  ~values
-  ~options
-  ~is_coalesced
+      ~sparse_dim
+      ~dense_dim
+      ~size
+      ~indices
+      ~values
+      ~options
+      ~is_coalesced
   =
   stubs__sparse_coo_tensor_with_dims_and_tensors
     (Int64.of_int sparse_dim)
@@ -5187,13 +5596,13 @@ let _sparse_coo_tensor_with_dims_and_tensors
 ;;
 
 let _sparse_coo_tensor_with_dims_and_tensors_out
-  ~out
-  ~sparse_dim
-  ~dense_dim
-  ~size
-  ~indices
-  ~values
-  ~is_coalesced
+      ~out
+      ~sparse_dim
+      ~dense_dim
+      ~size
+      ~indices
+      ~values
+      ~is_coalesced
   =
   stubs__sparse_coo_tensor_with_dims_and_tensors_out
     out
@@ -5670,12 +6079,12 @@ let _test_warn_in_autograd_out ~out self =
 ;;
 
 let _thnn_differentiable_gru_cell_backward
-  ~grad_hy
-  ~input_gates
-  ~hidden_gates
-  ~hx
-  ~input_bias
-  ~hidden_bias
+      ~grad_hy
+      ~input_gates
+      ~hidden_gates
+      ~hx
+      ~input_bias
+      ~hidden_bias
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__thnn_differentiable_gru_cell_backward
@@ -5699,14 +6108,14 @@ let _thnn_differentiable_gru_cell_backward
 ;;
 
 let _thnn_differentiable_lstm_cell_backward
-  ~grad_hy
-  ~grad_cy
-  ~input_gates
-  ~hidden_gates
-  ~input_bias
-  ~hidden_bias
-  ~cx
-  ~cy
+      ~grad_hy
+      ~grad_cy
+      ~input_gates
+      ~hidden_gates
+      ~input_bias
+      ~hidden_bias
+      ~cx
+      ~cy
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__thnn_differentiable_lstm_cell_backward
@@ -5769,14 +6178,14 @@ let _thnn_fused_gru_cell_backward ~grad_hy ~workspace ~has_bias =
 ;;
 
 let _thnn_fused_gru_cell_backward_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~out4
-  ~grad_hy
-  ~workspace
-  ~has_bias
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~out4
+      ~grad_hy
+      ~workspace
+      ~has_bias
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs__thnn_fused_gru_cell_backward_out
@@ -5798,13 +6207,13 @@ let _thnn_fused_gru_cell_backward_out
 ;;
 
 let _thnn_fused_gru_cell_out
-  ~out0
-  ~out1
-  ~input_gates
-  ~hidden_gates
-  ~hx
-  ~input_bias
-  ~hidden_bias
+      ~out0
+      ~out1
+      ~input_gates
+      ~hidden_gates
+      ~hx
+      ~input_bias
+      ~hidden_bias
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__thnn_fused_gru_cell_out
@@ -5887,15 +6296,15 @@ let _thnn_fused_lstm_cell_backward_impl ~grad_hy ~grad_cy ~cx ~cy ~workspace ~ha
 ;;
 
 let _thnn_fused_lstm_cell_backward_impl_out
-  ~out0
-  ~out1
-  ~out2
-  ~grad_hy
-  ~grad_cy
-  ~cx
-  ~cy
-  ~workspace
-  ~has_bias
+      ~out0
+      ~out1
+      ~out2
+      ~grad_hy
+      ~grad_cy
+      ~cx
+      ~cy
+      ~workspace
+      ~has_bias
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__thnn_fused_lstm_cell_backward_impl_out
@@ -5920,14 +6329,14 @@ let _thnn_fused_lstm_cell_backward_impl_out
 ;;
 
 let _thnn_fused_lstm_cell_out
-  ~out0
-  ~out1
-  ~out2
-  ~input_gates
-  ~hidden_gates
-  ~cx
-  ~input_bias
-  ~hidden_bias
+      ~out0
+      ~out1
+      ~out2
+      ~input_gates
+      ~hidden_gates
+      ~cx
+      ~input_bias
+      ~hidden_bias
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs__thnn_fused_lstm_cell_out
@@ -6128,26 +6537,26 @@ let _transform_bias_rescale_qkv_out ~out0 ~out1 ~out2 ~qkv ~qkv_bias ~num_heads 
 ;;
 
 let _transformer_encoder_layer_fwd
-  ~src
-  ~embed_dim
-  ~num_heads
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~use_gelu
-  ~norm_first
-  ~eps
-  ~norm_weight_1
-  ~norm_bias_1
-  ~norm_weight_2
-  ~norm_bias_2
-  ~ffn_weight_1
-  ~ffn_bias_1
-  ~ffn_weight_2
-  ~ffn_bias_2
-  ~mask
-  ~mask_type
+      ~src
+      ~embed_dim
+      ~num_heads
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~use_gelu
+      ~norm_first
+      ~eps
+      ~norm_weight_1
+      ~norm_bias_1
+      ~norm_weight_2
+      ~norm_bias_2
+      ~ffn_weight_1
+      ~ffn_bias_1
+      ~ffn_weight_2
+      ~ffn_bias_2
+      ~mask
+      ~mask_type
   =
   stubs__transformer_encoder_layer_fwd
     src
@@ -6181,27 +6590,27 @@ let _transformer_encoder_layer_fwd
 ;;
 
 let _transformer_encoder_layer_fwd_out
-  ~out
-  ~src
-  ~embed_dim
-  ~num_heads
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~use_gelu
-  ~norm_first
-  ~eps
-  ~norm_weight_1
-  ~norm_bias_1
-  ~norm_weight_2
-  ~norm_bias_2
-  ~ffn_weight_1
-  ~ffn_bias_1
-  ~ffn_weight_2
-  ~ffn_bias_2
-  ~mask
-  ~mask_type
+      ~out
+      ~src
+      ~embed_dim
+      ~num_heads
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~use_gelu
+      ~norm_first
+      ~eps
+      ~norm_weight_1
+      ~norm_bias_1
+      ~norm_weight_2
+      ~norm_bias_2
+      ~ffn_weight_1
+      ~ffn_bias_1
+      ~ffn_weight_2
+      ~ffn_bias_2
+      ~mask
+      ~mask_type
   =
   stubs__transformer_encoder_layer_fwd_out
     out
@@ -6271,16 +6680,16 @@ let _trilinear_out ~out ~i1 ~i2 ~i3 ~expand1 ~expand2 ~expand3 ~sumdim ~unroll_d
 ;;
 
 let _triton_multi_head_attention
-  ~query
-  ~key
-  ~value
-  ~embed_dim
-  ~num_head
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~mask
+      ~query
+      ~key
+      ~value
+      ~embed_dim
+      ~num_head
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~mask
   =
   stubs__triton_multi_head_attention
     query
@@ -6299,17 +6708,17 @@ let _triton_multi_head_attention
 ;;
 
 let _triton_multi_head_attention_out
-  ~out
-  ~query
-  ~key
-  ~value
-  ~embed_dim
-  ~num_head
-  ~qkv_weight
-  ~qkv_bias
-  ~proj_weight
-  ~proj_bias
-  ~mask
+      ~out
+      ~query
+      ~key
+      ~value
+      ~embed_dim
+      ~num_head
+      ~qkv_weight
+      ~qkv_bias
+      ~proj_weight
+      ~proj_bias
+      ~mask
   =
   stubs__triton_multi_head_attention_out
     out
@@ -6436,12 +6845,12 @@ let _upsample_bicubic2d_aa self ~output_size ~align_corners ~scales_h ~scales_w 
 ;;
 
 let _upsample_bicubic2d_aa_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_bicubic2d_aa_backward
     grad_output
@@ -6462,13 +6871,13 @@ let _upsample_bicubic2d_aa_backward
 ;;
 
 let _upsample_bicubic2d_aa_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_bicubic2d_aa_backward_grad_input
     grad_input
@@ -6540,12 +6949,12 @@ let _upsample_bilinear2d_aa self ~output_size ~align_corners ~scales_h ~scales_w
 ;;
 
 let _upsample_bilinear2d_aa_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_bilinear2d_aa_backward
     grad_output
@@ -6566,13 +6975,13 @@ let _upsample_bilinear2d_aa_backward
 ;;
 
 let _upsample_bilinear2d_aa_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_bilinear2d_aa_backward_grad_input
     grad_input
@@ -6626,6 +7035,110 @@ let _upsample_bilinear2d_aa_vec input ~output_size ~align_corners ~scale_factors
   |> with_tensor_gc
 ;;
 
+let _upsample_lanczos2d_aa self ~output_size ~align_corners ~scales_h ~scales_w =
+  stubs__upsample_lanczos2d_aa
+    self
+    (List.map Int64.of_int output_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length output_size)
+    (if align_corners then 1 else 0)
+    (Option.value scales_h ~default:0.0)
+    (match scales_h with
+     | Some _ -> 0
+     | None -> 1)
+    (Option.value scales_w ~default:0.0)
+    (match scales_w with
+     | Some _ -> 0
+     | None -> 1)
+  |> with_tensor_gc
+;;
+
+let _upsample_lanczos2d_aa_backward
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
+  =
+  stubs__upsample_lanczos2d_aa_backward
+    grad_output
+    (List.map Int64.of_int output_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length output_size)
+    (List.map Int64.of_int input_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length input_size)
+    (if align_corners then 1 else 0)
+    (Option.value scales_h ~default:0.0)
+    (match scales_h with
+     | Some _ -> 0
+     | None -> 1)
+    (Option.value scales_w ~default:0.0)
+    (match scales_w with
+     | Some _ -> 0
+     | None -> 1)
+  |> with_tensor_gc
+;;
+
+let _upsample_lanczos2d_aa_backward_grad_input
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
+  =
+  stubs__upsample_lanczos2d_aa_backward_grad_input
+    grad_input
+    grad_output
+    (List.map Int64.of_int output_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length output_size)
+    (List.map Int64.of_int input_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length input_size)
+    (if align_corners then 1 else 0)
+    (Option.value scales_h ~default:0.0)
+    (match scales_h with
+     | Some _ -> 0
+     | None -> 1)
+    (Option.value scales_w ~default:0.0)
+    (match scales_w with
+     | Some _ -> 0
+     | None -> 1)
+  |> with_tensor_gc
+;;
+
+let _upsample_lanczos2d_aa_out ~out self ~output_size ~align_corners ~scales_h ~scales_w =
+  stubs__upsample_lanczos2d_aa_out
+    out
+    self
+    (List.map Int64.of_int output_size |> CArray.of_list int64_t |> CArray.start)
+    (List.length output_size)
+    (if align_corners then 1 else 0)
+    (Option.value scales_h ~default:0.0)
+    (match scales_h with
+     | Some _ -> 0
+     | None -> 1)
+    (Option.value scales_w ~default:0.0)
+    (match scales_w with
+     | Some _ -> 0
+     | None -> 1)
+  |> with_tensor_gc
+;;
+
+let _upsample_lanczos2d_aa_vec input ~output_size ~align_corners ~scale_factors =
+  stubs__upsample_lanczos2d_aa_vec
+    input
+    (match output_size with
+     | None -> from_voidp int64_t null
+     | Some v -> List.map Int64.of_int v |> CArray.of_list int64_t |> CArray.start)
+    (match output_size with
+     | None -> -1
+     | Some v -> List.length v)
+    (if align_corners then 1 else 0)
+    (scale_factors |> CArray.of_list double |> CArray.start)
+    (List.length scale_factors)
+  |> with_tensor_gc
+;;
+
 let _upsample_nearest_exact1d self ~output_size ~scales =
   stubs__upsample_nearest_exact1d
     self
@@ -6653,11 +7166,11 @@ let _upsample_nearest_exact1d_backward ~grad_output ~output_size ~input_size ~sc
 ;;
 
 let _upsample_nearest_exact1d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales
   =
   stubs__upsample_nearest_exact1d_backward_grad_input
     grad_input
@@ -6717,11 +7230,11 @@ let _upsample_nearest_exact2d self ~output_size ~scales_h ~scales_w =
 ;;
 
 let _upsample_nearest_exact2d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_nearest_exact2d_backward
     grad_output
@@ -6741,12 +7254,12 @@ let _upsample_nearest_exact2d_backward
 ;;
 
 let _upsample_nearest_exact2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_nearest_exact2d_backward_grad_input
     grad_input
@@ -6818,12 +7331,12 @@ let _upsample_nearest_exact3d self ~output_size ~scales_d ~scales_h ~scales_w =
 ;;
 
 let _upsample_nearest_exact3d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_nearest_exact3d_backward
     grad_output
@@ -6847,13 +7360,13 @@ let _upsample_nearest_exact3d_backward
 ;;
 
 let _upsample_nearest_exact3d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs__upsample_nearest_exact3d_backward_grad_input
     grad_input
@@ -6934,13 +7447,33 @@ let _use_cudnn_ctc_loss_tensor ~log_probs ~targets ~input_lengths ~target_length
 
 let _use_cudnn_rnn_flatten_weight = stubs__use_cudnn_rnn_flatten_weight
 
+let _use_miopen_ctc_loss ~log_probs ~targets ~input_lengths ~target_lengths ~blank =
+  stubs__use_miopen_ctc_loss
+    log_probs
+    targets
+    (List.map Int64.of_int input_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length input_lengths)
+    (List.map Int64.of_int target_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length target_lengths)
+    (Int64.of_int blank)
+;;
+
+let _use_miopen_ctc_loss_tensor ~log_probs ~targets ~input_lengths ~target_lengths ~blank =
+  stubs__use_miopen_ctc_loss_tensor
+    log_probs
+    targets
+    input_lengths
+    target_lengths
+    (Int64.of_int blank)
+;;
+
 let _validate_compressed_sparse_indices
-  ~is_crow
-  ~compressed_idx
-  ~plain_idx
-  ~cdim
-  ~dim
-  ~nnz
+      ~is_crow
+      ~compressed_idx
+      ~plain_idx
+      ~cdim
+      ~dim
+      ~nnz
   =
   stubs__validate_compressed_sparse_indices
     (if is_crow then 1 else 0)
@@ -6951,31 +7484,52 @@ let _validate_compressed_sparse_indices
     (Int64.of_int nnz)
 ;;
 
-let _validate_sparse_bsc_tensor_args ~ccol_indices ~row_indices ~values ~size =
+let _validate_sparse_bsc_tensor_args
+      ~ccol_indices
+      ~row_indices
+      ~values
+      ~size
+      ~check_pinning
+  =
   stubs__validate_sparse_bsc_tensor_args
     ccol_indices
     row_indices
     values
     (List.map Int64.of_int size |> CArray.of_list int64_t |> CArray.start)
     (List.length size)
+    (if check_pinning then 1 else 0)
 ;;
 
-let _validate_sparse_bsr_tensor_args ~crow_indices ~col_indices ~values ~size =
+let _validate_sparse_bsr_tensor_args
+      ~crow_indices
+      ~col_indices
+      ~values
+      ~size
+      ~check_pinning
+  =
   stubs__validate_sparse_bsr_tensor_args
     crow_indices
     col_indices
     values
     (List.map Int64.of_int size |> CArray.of_list int64_t |> CArray.start)
     (List.length size)
+    (if check_pinning then 1 else 0)
 ;;
 
-let _validate_sparse_csc_tensor_args ~ccol_indices ~row_indices ~values ~size =
+let _validate_sparse_csc_tensor_args
+      ~ccol_indices
+      ~row_indices
+      ~values
+      ~size
+      ~check_pinning
+  =
   stubs__validate_sparse_csc_tensor_args
     ccol_indices
     row_indices
     values
     (List.map Int64.of_int size |> CArray.of_list int64_t |> CArray.start)
     (List.length size)
+    (if check_pinning then 1 else 0)
 ;;
 
 let _values self = stubs__values self |> with_tensor_gc
@@ -6990,6 +7544,16 @@ let _weight_int4pack_mm self ~mat2 ~qgroupsize ~qscaleandzeros =
 
 let _weight_int4pack_mm_for_cpu self ~mat2 ~qgroupsize ~qscaleandzeros =
   stubs__weight_int4pack_mm_for_cpu self mat2 (Int64.of_int qgroupsize) qscaleandzeros
+  |> with_tensor_gc
+;;
+
+let _weight_int4pack_mm_with_scales_and_zeros self ~mat2 ~qgroupsize ~qscale ~qzeros =
+  stubs__weight_int4pack_mm_with_scales_and_zeros
+    self
+    mat2
+    (Int64.of_int qgroupsize)
+    qscale
+    qzeros
   |> with_tensor_gc
 ;;
 
@@ -7036,13 +7600,13 @@ let _weight_norm_interface_backward ~grad_w ~saved_v ~saved_g ~saved_norms ~dim 
 ;;
 
 let _weight_norm_interface_backward_out
-  ~out0
-  ~out1
-  ~grad_w
-  ~saved_v
-  ~saved_g
-  ~saved_norms
-  ~dim
+      ~out0
+      ~out1
+      ~grad_w
+      ~saved_v
+      ~saved_g
+      ~saved_norms
+      ~dim
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs__weight_norm_interface_backward_out
@@ -7073,13 +7637,13 @@ let _wrapped_linear_prepack ~weight ~weight_scale ~weight_zero_point ~bias =
 ;;
 
 let _wrapped_quantized_linear_prepacked
-  input
-  ~input_scale
-  ~input_zero_point
-  ~packed_weight
-  ~output_scale
-  ~output_zero_point
-  ~out_channel
+      input
+      ~input_scale
+      ~input_zero_point
+      ~packed_weight
+      ~output_scale
+      ~output_zero_point
+      ~out_channel
   =
   stubs__wrapped_quantized_linear_prepacked
     input
@@ -7434,6 +7998,37 @@ let addmm_ ?beta ?alpha self ~mat1 ~mat2 =
     self
     mat1
     mat2
+    (match beta with
+     | Some v -> v
+     | None -> none_scalar)
+    (match alpha with
+     | Some v -> v
+     | None -> none_scalar)
+  |> with_tensor_gc
+;;
+
+let addmm_dtype ?beta ?alpha self ~mat1 ~mat2 ~out_dtype =
+  stubs_addmm_dtype
+    self
+    mat1
+    mat2
+    (Kind.packed_to_int out_dtype)
+    (match beta with
+     | Some v -> v
+     | None -> none_scalar)
+    (match alpha with
+     | Some v -> v
+     | None -> none_scalar)
+  |> with_tensor_gc
+;;
+
+let addmm_dtype_out ?beta ?alpha ~out self ~mat1 ~mat2 ~out_dtype =
+  stubs_addmm_dtype_out
+    out
+    self
+    mat1
+    mat2
+    (Kind.packed_to_int out_dtype)
     (match beta with
      | Some v -> v
      | None -> none_scalar)
@@ -8065,13 +8660,13 @@ let avg_pool1d_out ~out self ~kernel_size ~stride ~padding ~ceil_mode ~count_inc
 ;;
 
 let avg_pool2d
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool2d
     self
@@ -8093,14 +8688,14 @@ let avg_pool2d
 ;;
 
 let avg_pool2d_backward
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool2d_backward
     grad_output
@@ -8123,15 +8718,15 @@ let avg_pool2d_backward
 ;;
 
 let avg_pool2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool2d_backward_grad_input
     grad_input
@@ -8155,14 +8750,14 @@ let avg_pool2d_backward_grad_input
 ;;
 
 let avg_pool2d_out
-  ~out
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~out
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool2d_out
     out
@@ -8185,13 +8780,13 @@ let avg_pool2d_out
 ;;
 
 let avg_pool3d
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool3d
     self
@@ -8213,14 +8808,14 @@ let avg_pool3d
 ;;
 
 let avg_pool3d_backward
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool3d_backward
     grad_output
@@ -8243,15 +8838,15 @@ let avg_pool3d_backward
 ;;
 
 let avg_pool3d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool3d_backward_grad_input
     grad_input
@@ -8275,14 +8870,14 @@ let avg_pool3d_backward_grad_input
 ;;
 
 let avg_pool3d_out
-  ~out
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~ceil_mode
-  ~count_include_pad
-  ~divisor_override
+      ~out
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~ceil_mode
+      ~count_include_pad
+      ~divisor_override
   =
   stubs_avg_pool3d_out
     out
@@ -8323,6 +8918,37 @@ let baddbmm_ ?beta ?alpha self ~batch1 ~batch2 =
     self
     batch1
     batch2
+    (match beta with
+     | Some v -> v
+     | None -> none_scalar)
+    (match alpha with
+     | Some v -> v
+     | None -> none_scalar)
+  |> with_tensor_gc
+;;
+
+let baddbmm_dtype ?beta ?alpha self ~batch1 ~batch2 ~out_dtype =
+  stubs_baddbmm_dtype
+    self
+    batch1
+    batch2
+    (Kind.packed_to_int out_dtype)
+    (match beta with
+     | Some v -> v
+     | None -> none_scalar)
+    (match alpha with
+     | Some v -> v
+     | None -> none_scalar)
+  |> with_tensor_gc
+;;
+
+let baddbmm_dtype_out ?beta ?alpha ~out self ~batch1 ~batch2 ~out_dtype =
+  stubs_baddbmm_dtype_out
+    out
+    self
+    batch1
+    batch2
+    (Kind.packed_to_int out_dtype)
     (match beta with
      | Some v -> v
      | None -> none_scalar)
@@ -8377,15 +9003,15 @@ let bartlett_window_periodic_out ~out ~window_length ~periodic =
 ;;
 
 let batch_norm
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
-  ~cudnn_enabled
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
+      ~cudnn_enabled
   =
   stubs_batch_norm
     input
@@ -8409,14 +9035,14 @@ let batch_norm
 ;;
 
 let batch_norm_backward_elemt
-  ~grad_out
-  input
-  ~mean
-  ~invstd
-  ~weight
-  ~sum_dy
-  ~sum_dy_xmu
-  ~count
+      ~grad_out
+      input
+      ~mean
+      ~invstd
+      ~weight
+      ~sum_dy
+      ~sum_dy_xmu
+      ~count
   =
   stubs_batch_norm_backward_elemt
     grad_out
@@ -8433,15 +9059,15 @@ let batch_norm_backward_elemt
 ;;
 
 let batch_norm_backward_elemt_out
-  ~out
-  ~grad_out
-  input
-  ~mean
-  ~invstd
-  ~weight
-  ~sum_dy
-  ~sum_dy_xmu
-  ~count
+      ~out
+      ~grad_out
+      input
+      ~mean
+      ~invstd
+      ~weight
+      ~sum_dy
+      ~sum_dy_xmu
+      ~count
   =
   stubs_batch_norm_backward_elemt_out
     out
@@ -8459,14 +9085,14 @@ let batch_norm_backward_elemt_out
 ;;
 
 let batch_norm_backward_reduce
-  ~grad_out
-  input
-  ~mean
-  ~invstd
-  ~weight
-  ~input_g
-  ~weight_g
-  ~bias_g
+      ~grad_out
+      input
+      ~mean
+      ~invstd
+      ~weight
+      ~input_g
+      ~weight_g
+      ~bias_g
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_batch_norm_backward_reduce
@@ -8489,18 +9115,18 @@ let batch_norm_backward_reduce
 ;;
 
 let batch_norm_backward_reduce_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~grad_out
-  input
-  ~mean
-  ~invstd
-  ~weight
-  ~input_g
-  ~weight_g
-  ~bias_g
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~grad_out
+      input
+      ~mean
+      ~invstd
+      ~weight
+      ~input_g
+      ~weight_g
+      ~bias_g
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_batch_norm_backward_reduce_out
@@ -8558,14 +9184,14 @@ let batch_norm_elemt_out ~out input ~weight ~bias ~mean ~invstd ~eps =
 ;;
 
 let batch_norm_gather_stats
-  input
-  ~mean
-  ~invstd
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
-  ~count
+      input
+      ~mean
+      ~invstd
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
+      ~count
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_batch_norm_gather_stats
@@ -8588,16 +9214,16 @@ let batch_norm_gather_stats
 ;;
 
 let batch_norm_gather_stats_out
-  ~out0
-  ~out1
-  input
-  ~mean
-  ~invstd
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
-  ~count
+      ~out0
+      ~out1
+      input
+      ~mean
+      ~invstd
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
+      ~count
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_batch_norm_gather_stats_out
@@ -8622,14 +9248,14 @@ let batch_norm_gather_stats_out
 ;;
 
 let batch_norm_gather_stats_with_counts
-  input
-  ~mean
-  ~invstd
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
-  ~counts
+      input
+      ~mean
+      ~invstd
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
+      ~counts
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_batch_norm_gather_stats_with_counts
@@ -8652,16 +9278,16 @@ let batch_norm_gather_stats_with_counts
 ;;
 
 let batch_norm_gather_stats_with_counts_out
-  ~out0
-  ~out1
-  input
-  ~mean
-  ~invstd
-  ~running_mean
-  ~running_var
-  ~momentum
-  ~eps
-  ~counts
+      ~out0
+      ~out1
+      input
+      ~mean
+      ~invstd
+      ~running_mean
+      ~running_var
+      ~momentum
+      ~eps
+      ~counts
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_batch_norm_gather_stats_with_counts_out
@@ -8778,12 +9404,12 @@ let binary_cross_entropy_backward ~grad_output self ~target ~weight ~reduction =
 ;;
 
 let binary_cross_entropy_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~weight
-  ~reduction
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~weight
+      ~reduction
   =
   stubs_binary_cross_entropy_backward_grad_input
     grad_input
@@ -9051,6 +9677,15 @@ let block_diag_out ~out tensors =
 ;;
 
 let bmm self ~mat2 = stubs_bmm self mat2 |> with_tensor_gc
+
+let bmm_dtype self ~mat2 ~out_dtype =
+  stubs_bmm_dtype self mat2 (Kind.packed_to_int out_dtype) |> with_tensor_gc
+;;
+
+let bmm_dtype_out ~out self ~mat2 ~out_dtype =
+  stubs_bmm_dtype_out out self mat2 (Kind.packed_to_int out_dtype) |> with_tensor_gc
+;;
+
 let bmm_out ~out self ~mat2 = stubs_bmm_out out self mat2 |> with_tensor_gc
 
 let broadcast_tensors tensors =
@@ -9687,14 +10322,14 @@ let conv_tbc_out ~out self ~weight ~bias ~pad =
 ;;
 
 let conv_transpose1d
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~groups
-  ~dilation
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~groups
+      ~dilation
   =
   stubs_conv_transpose1d
     input
@@ -9715,14 +10350,14 @@ let conv_transpose1d
 ;;
 
 let conv_transpose2d
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~groups
-  ~dilation
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~groups
+      ~dilation
   =
   stubs_conv_transpose2d
     input
@@ -9743,14 +10378,14 @@ let conv_transpose2d
 ;;
 
 let conv_transpose3d
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~groups
-  ~dilation
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~groups
+      ~dilation
   =
   stubs_conv_transpose3d
     input
@@ -9771,15 +10406,15 @@ let conv_transpose3d
 ;;
 
 let convolution
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
   =
   stubs_convolution
     input
@@ -9801,16 +10436,16 @@ let convolution
 ;;
 
 let convolution_out
-  ~out
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
+      ~out
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
   =
   stubs_convolution_out
     out
@@ -9833,15 +10468,15 @@ let convolution_out
 ;;
 
 let convolution_overrideable
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
   =
   stubs_convolution_overrideable
     input
@@ -9863,16 +10498,16 @@ let convolution_overrideable
 ;;
 
 let convolution_overrideable_out
-  ~out
-  input
-  ~weight
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~transposed
-  ~output_padding
-  ~groups
+      ~out
+      input
+      ~weight
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~transposed
+      ~output_padding
+      ~groups
   =
   stubs_convolution_overrideable_out
     out
@@ -10030,13 +10665,13 @@ let crow_indices_copy_out ~out self =
 ;;
 
 let ctc_loss
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~reduction
-  ~zero_infinity
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~reduction
+      ~zero_infinity
   =
   stubs_ctc_loss
     log_probs
@@ -10052,13 +10687,13 @@ let ctc_loss
 ;;
 
 let ctc_loss_tensor
-  ~log_probs
-  ~targets
-  ~input_lengths
-  ~target_lengths
-  ~blank
-  ~reduction
-  ~zero_infinity
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~reduction
+      ~zero_infinity
   =
   stubs_ctc_loss_tensor
     log_probs
@@ -10114,14 +10749,14 @@ let cudnn_affine_grid_generator_out ~out ~theta ~n ~c ~h ~w =
 ;;
 
 let cudnn_batch_norm
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~exponential_average_factor
-  ~epsilon
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~exponential_average_factor
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_cudnn_batch_norm
@@ -10148,15 +10783,15 @@ let cudnn_batch_norm
 ;;
 
 let cudnn_batch_norm_backward
-  input
-  ~grad_output
-  ~weight
-  ~running_mean
-  ~running_var
-  ~save_mean
-  ~save_var
-  ~epsilon
-  ~reservespace
+      input
+      ~grad_output
+      ~weight
+      ~running_mean
+      ~running_var
+      ~save_mean
+      ~save_var
+      ~epsilon
+      ~reservespace
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_cudnn_batch_norm_backward
@@ -10185,18 +10820,18 @@ let cudnn_batch_norm_backward
 ;;
 
 let cudnn_batch_norm_backward_out
-  ~out0
-  ~out1
-  ~out2
-  input
-  ~grad_output
-  ~weight
-  ~running_mean
-  ~running_var
-  ~save_mean
-  ~save_var
-  ~epsilon
-  ~reservespace
+      ~out0
+      ~out1
+      ~out2
+      input
+      ~grad_output
+      ~weight
+      ~running_mean
+      ~running_var
+      ~save_mean
+      ~save_var
+      ~epsilon
+      ~reservespace
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_cudnn_batch_norm_backward_out
@@ -10228,18 +10863,18 @@ let cudnn_batch_norm_backward_out
 ;;
 
 let cudnn_batch_norm_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~exponential_average_factor
-  ~epsilon
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~exponential_average_factor
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_cudnn_batch_norm_out
@@ -10270,15 +10905,15 @@ let cudnn_batch_norm_out
 ;;
 
 let cudnn_convolution
-  self
-  ~weight
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~allow_tf32
+      self
+      ~weight
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~allow_tf32
   =
   stubs_cudnn_convolution
     self
@@ -10297,15 +10932,15 @@ let cudnn_convolution
 ;;
 
 let cudnn_convolution_add_relu
-  self
-  ~weight
-  ~z
-  ~alpha
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~groups
+      self
+      ~weight
+      ~z
+      ~alpha
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~groups
   =
   stubs_cudnn_convolution_add_relu
     self
@@ -10326,16 +10961,16 @@ let cudnn_convolution_add_relu
 ;;
 
 let cudnn_convolution_add_relu_out
-  ~out
-  self
-  ~weight
-  ~z
-  ~alpha
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~groups
+      ~out
+      self
+      ~weight
+      ~z
+      ~alpha
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~groups
   =
   stubs_cudnn_convolution_add_relu_out
     out
@@ -10357,16 +10992,16 @@ let cudnn_convolution_add_relu_out
 ;;
 
 let cudnn_convolution_out
-  ~out
-  self
-  ~weight
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~allow_tf32
+      ~out
+      self
+      ~weight
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~allow_tf32
   =
   stubs_cudnn_convolution_out
     out
@@ -10421,16 +11056,16 @@ let cudnn_convolution_relu_out ~out self ~weight ~bias ~stride ~padding ~dilatio
 ;;
 
 let cudnn_convolution_transpose
-  self
-  ~weight
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~allow_tf32
+      self
+      ~weight
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~allow_tf32
   =
   stubs_cudnn_convolution_transpose
     self
@@ -10451,17 +11086,17 @@ let cudnn_convolution_transpose
 ;;
 
 let cudnn_convolution_transpose_out
-  ~out
-  self
-  ~weight
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
-  ~allow_tf32
+      ~out
+      self
+      ~weight
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
+      ~allow_tf32
   =
   stubs_cudnn_convolution_transpose_out
     out
@@ -10748,6 +11383,7 @@ let diff_out ~out self ~n ~dim ~prepend ~append =
 let digamma self = stubs_digamma self |> with_tensor_gc
 let digamma_ self = stubs_digamma_ self |> with_tensor_gc
 let digamma_out ~out self = stubs_digamma_out out self |> with_tensor_gc
+let dim self = stubs_dim self
 
 let dist ?p self other =
   stubs_dist
@@ -11012,13 +11648,13 @@ let elu_backward ~grad_output ~alpha ~scale ~input_scale ~is_result ~self_or_res
 ;;
 
 let elu_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~alpha
-  ~scale
-  ~input_scale
-  ~is_result
-  ~self_or_result
+      ~grad_input
+      ~grad_output
+      ~alpha
+      ~scale
+      ~input_scale
+      ~is_result
+      ~self_or_result
   =
   stubs_elu_backward_grad_input
     grad_input
@@ -11058,12 +11694,12 @@ let embedding ~weight ~indices ~padding_idx ~scale_grad_by_freq ~sparse =
 ;;
 
 let embedding_backward
-  ~grad
-  ~indices
-  ~num_weights
-  ~padding_idx
-  ~scale_grad_by_freq
-  ~sparse
+      ~grad
+      ~indices
+      ~num_weights
+      ~padding_idx
+      ~scale_grad_by_freq
+      ~sparse
   =
   stubs_embedding_backward
     grad
@@ -11076,14 +11712,14 @@ let embedding_backward
 ;;
 
 let embedding_bag
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_embedding_bag
@@ -11106,15 +11742,15 @@ let embedding_bag
 ;;
 
 let embedding_bag_padding_idx
-  ~weight
-  ~indices
-  ~offsets
-  ~scale_grad_by_freq
-  ~mode
-  ~sparse
-  ~per_sample_weights
-  ~include_last_offset
-  ~padding_idx
+      ~weight
+      ~indices
+      ~offsets
+      ~scale_grad_by_freq
+      ~mode
+      ~sparse
+      ~per_sample_weights
+      ~include_last_offset
+      ~padding_idx
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_embedding_bag_padding_idx
@@ -11143,11 +11779,11 @@ let embedding_bag_padding_idx
 ;;
 
 let embedding_dense_backward
-  ~grad_output
-  ~indices
-  ~num_weights
-  ~padding_idx
-  ~scale_grad_by_freq
+      ~grad_output
+      ~indices
+      ~num_weights
+      ~padding_idx
+      ~scale_grad_by_freq
   =
   stubs_embedding_dense_backward
     grad_output
@@ -11159,12 +11795,12 @@ let embedding_dense_backward
 ;;
 
 let embedding_dense_backward_out
-  ~out
-  ~grad_output
-  ~indices
-  ~num_weights
-  ~padding_idx
-  ~scale_grad_by_freq
+      ~out
+      ~grad_output
+      ~indices
+      ~num_weights
+      ~padding_idx
+      ~scale_grad_by_freq
   =
   stubs_embedding_dense_backward_out
     out
@@ -11389,12 +12025,12 @@ let fake_quantize_per_channel_affine self ~scale ~zero_point ~axis ~quant_min ~q
 ;;
 
 let fake_quantize_per_channel_affine_cachemask
-  self
-  ~scale
-  ~zero_point
-  ~axis
-  ~quant_min
-  ~quant_max
+      self
+      ~scale
+      ~zero_point
+      ~axis
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fake_quantize_per_channel_affine_cachemask
@@ -11415,14 +12051,14 @@ let fake_quantize_per_channel_affine_cachemask_backward ~grad ~mask =
 ;;
 
 let fake_quantize_per_channel_affine_cachemask_out
-  ~out0
-  ~out1
-  self
-  ~scale
-  ~zero_point
-  ~axis
-  ~quant_min
-  ~quant_max
+      ~out0
+      ~out1
+      self
+      ~scale
+      ~zero_point
+      ~axis
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fake_quantize_per_channel_affine_cachemask_out
@@ -11451,11 +12087,11 @@ let fake_quantize_per_tensor_affine self ~scale ~zero_point ~quant_min ~quant_ma
 ;;
 
 let fake_quantize_per_tensor_affine_cachemask
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fake_quantize_per_tensor_affine_cachemask
@@ -11475,13 +12111,13 @@ let fake_quantize_per_tensor_affine_cachemask_backward ~grad ~mask =
 ;;
 
 let fake_quantize_per_tensor_affine_cachemask_out
-  ~out0
-  ~out1
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
+      ~out0
+      ~out1
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fake_quantize_per_tensor_affine_cachemask_out
@@ -11499,11 +12135,11 @@ let fake_quantize_per_tensor_affine_cachemask_out
 ;;
 
 let fake_quantize_per_tensor_affine_tensor_qparams
-  self
-  ~scale
-  ~zero_point
-  ~quant_min
-  ~quant_max
+      self
+      ~scale
+      ~zero_point
+      ~quant_min
+      ~quant_max
   =
   stubs_fake_quantize_per_tensor_affine_tensor_qparams
     self
@@ -11519,18 +12155,38 @@ let fbgemm_linear_fp16_weight input ~packed_weight ~bias =
 ;;
 
 let fbgemm_linear_fp16_weight_fp32_activation input ~packed_weight ~bias =
-  stubs_fbgemm_linear_fp16_weight_fp32_activation input packed_weight bias
+  stubs_fbgemm_linear_fp16_weight_fp32_activation
+    input
+    packed_weight
+    (match bias with
+     | Some v -> v
+     | None -> none_gc_tensor)
   |> with_tensor_gc
 ;;
 
+let fbgemm_linear_fp16_weight_fp32_activation_out input ~packed_weight ~bias ~output =
+  stubs_fbgemm_linear_fp16_weight_fp32_activation_out
+    input
+    packed_weight
+    (match bias with
+     | Some v -> v
+     | None -> none_gc_tensor)
+    output
+  |> with_tensor_gc
+;;
+
+let fbgemm_linear_fp16_weight_out input ~packed_weight ~bias ~output =
+  stubs_fbgemm_linear_fp16_weight_out input packed_weight bias output |> with_tensor_gc
+;;
+
 let fbgemm_linear_int8_weight
-  input
-  ~weight
-  ~packed
-  ~col_offsets
-  ~weight_scale
-  ~weight_zero_point
-  ~bias
+      input
+      ~weight
+      ~packed
+      ~col_offsets
+      ~weight_scale
+      ~weight_zero_point
+      ~bias
   =
   stubs_fbgemm_linear_int8_weight
     input
@@ -11544,13 +12200,13 @@ let fbgemm_linear_int8_weight
 ;;
 
 let fbgemm_linear_int8_weight_fp32_activation
-  input
-  ~weight
-  ~packed
-  ~col_offsets
-  ~weight_scale
-  ~weight_zero_point
-  ~bias
+      input
+      ~weight
+      ~packed
+      ~col_offsets
+      ~weight_scale
+      ~weight_zero_point
+      ~bias
   =
   stubs_fbgemm_linear_int8_weight_fp32_activation
     input
@@ -12499,12 +13155,12 @@ let fractional_max_pool2d_backward ~grad_output self ~kernel_size ~output_size ~
 ;;
 
 let fractional_max_pool2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~output_size
-  ~indices
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~output_size
+      ~indices
   =
   stubs_fractional_max_pool2d_backward_grad_input
     grad_input
@@ -12519,12 +13175,12 @@ let fractional_max_pool2d_backward_grad_input
 ;;
 
 let fractional_max_pool2d_output
-  ~output
-  ~indices
-  self
-  ~kernel_size
-  ~output_size
-  ~random_samples
+      ~output
+      ~indices
+      self
+      ~kernel_size
+      ~output_size
+      ~random_samples
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fractional_max_pool2d_output
@@ -12570,12 +13226,12 @@ let fractional_max_pool3d_backward ~grad_output self ~kernel_size ~output_size ~
 ;;
 
 let fractional_max_pool3d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~output_size
-  ~indices
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~output_size
+      ~indices
   =
   stubs_fractional_max_pool3d_backward_grad_input
     grad_input
@@ -12590,12 +13246,12 @@ let fractional_max_pool3d_backward_grad_input
 ;;
 
 let fractional_max_pool3d_output
-  ~output
-  ~indices
-  self
-  ~kernel_size
-  ~output_size
-  ~random_samples
+      ~output
+      ~indices
+      self
+      ~kernel_size
+      ~output_size
+      ~random_samples
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_fractional_max_pool3d_output
@@ -12703,19 +13359,19 @@ let full_out ~out ~size ~fill_value =
 ;;
 
 let fused_moving_avg_obs_fake_quant
-  self
-  ~observer_on
-  ~fake_quant_on
-  ~running_min
-  ~running_max
-  ~scale
-  ~zero_point
-  ~averaging_const
-  ~quant_min
-  ~quant_max
-  ~ch_axis
-  ~per_row_fake_quant
-  ~symmetric_quant
+      self
+      ~observer_on
+      ~fake_quant_on
+      ~running_min
+      ~running_max
+      ~scale
+      ~zero_point
+      ~averaging_const
+      ~quant_min
+      ~quant_max
+      ~ch_axis
+      ~per_row_fake_quant
+      ~symmetric_quant
   =
   stubs_fused_moving_avg_obs_fake_quant
     self
@@ -12795,6 +13451,7 @@ let geqrf_a ~a ~tau self =
 
 let ger self ~vec2 = stubs_ger self vec2 |> with_tensor_gc
 let ger_out ~out self ~vec2 = stubs_ger_out out self vec2 |> with_tensor_gc
+let get_device self = stubs_get_device self
 let glu self ~dim = stubs_glu self (Int64.of_int dim) |> with_tensor_gc
 
 let glu_backward ~grad_output self ~dim =
@@ -12924,15 +13581,15 @@ let group_norm input ~num_groups ~weight ~bias ~eps ~cudnn_enabled =
 ;;
 
 let gru
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_gru
@@ -12969,15 +13626,15 @@ let gru_cell input ~hx ~w_ih ~w_hh ~b_ih ~b_hh =
 ;;
 
 let gru_data
-  ~data
-  ~batch_sizes
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
+      ~data
+      ~batch_sizes
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_gru_data
@@ -13198,6 +13855,27 @@ let hardtanh_out ?min_val ?max_val ~out self =
     (match max_val with
      | Some v -> v
      | None -> none_scalar)
+  |> with_tensor_gc
+;;
+
+let hash_tensor self ~dim ~keepdim ~mode =
+  stubs_hash_tensor
+    self
+    (List.map Int64.of_int dim |> CArray.of_list int64_t |> CArray.start)
+    (List.length dim)
+    (if keepdim then 1 else 0)
+    (Int64.of_int mode)
+  |> with_tensor_gc
+;;
+
+let hash_tensor_out ~out self ~dim ~keepdim ~mode =
+  stubs_hash_tensor_out
+    out
+    self
+    (List.map Int64.of_int dim |> CArray.of_list int64_t |> CArray.start)
+    (List.length dim)
+    (if keepdim then 1 else 0)
+    (Int64.of_int mode)
   |> with_tensor_gc
 ;;
 
@@ -13492,15 +14170,15 @@ let inner self other = stubs_inner self other |> with_tensor_gc
 let inner_out ~out self other = stubs_inner_out out self other |> with_tensor_gc
 
 let instance_norm
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~use_input_stats
-  ~momentum
-  ~eps
-  ~cudnn_enabled
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~use_input_stats
+      ~momentum
+      ~eps
+      ~cudnn_enabled
   =
   stubs_instance_norm
     input
@@ -13530,6 +14208,7 @@ let inverse_out ~out self = stubs_inverse_out out self |> with_tensor_gc
 let is_coalesced self = stubs_is_coalesced self
 let is_complex self = stubs_is_complex self
 let is_conj self = stubs_is_conj self
+let is_contiguous self = stubs_is_contiguous self
 let is_distributed self = stubs_is_distributed self
 let is_floating_point self = stubs_is_floating_point self
 let is_inference self = stubs_is_inference self
@@ -13616,16 +14295,16 @@ let isposinf_out ~out self = stubs_isposinf_out out self |> with_tensor_gc
 let isreal self = stubs_isreal self |> with_tensor_gc
 
 let istft
-  self
-  ~n_fft
-  ~hop_length
-  ~win_length
-  ~window
-  ~center
-  ~normalized
-  ~onesided
-  ~length
-  ~return_complex
+      self
+      ~n_fft
+      ~hop_length
+      ~win_length
+      ~window
+      ~center
+      ~normalized
+      ~onesided
+      ~length
+      ~return_complex
   =
   stubs_istft
     self
@@ -13807,11 +14486,11 @@ let leaky_relu_backward ~grad_output self ~negative_slope ~self_is_result =
 ;;
 
 let leaky_relu_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~negative_slope
-  ~self_is_result
+      ~grad_input
+      ~grad_output
+      self
+      ~negative_slope
+      ~self_is_result
   =
   stubs_leaky_relu_backward_grad_input
     grad_input
@@ -13884,6 +14563,23 @@ let lift_fresh self = stubs_lift_fresh self |> with_tensor_gc
 let lift_fresh_copy self = stubs_lift_fresh_copy self |> with_tensor_gc
 let lift_fresh_copy_out ~out self = stubs_lift_fresh_copy_out out self |> with_tensor_gc
 let lift_out ~out self = stubs_lift_out out self |> with_tensor_gc
+
+let linalg__powsum ?ord self ~dim ~keepdim ~dtype =
+  stubs_linalg__powsum
+    self
+    (match ord with
+     | Some v -> v
+     | None -> none_scalar)
+    (match dim with
+     | None -> from_voidp int64_t null
+     | Some v -> List.map Int64.of_int v |> CArray.of_list int64_t |> CArray.start)
+    (match dim with
+     | None -> -1
+     | Some v -> List.length v)
+    (if keepdim then 1 else 0)
+    (Kind.packed_to_int dtype)
+  |> with_tensor_gc
+;;
 
 let linalg_cholesky self ~upper =
   stubs_linalg_cholesky self (if upper then 1 else 0) |> with_tensor_gc
@@ -14880,15 +15576,15 @@ let logsumexp_out ~out self ~dim ~keepdim =
 ;;
 
 let lstm
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_lstm
@@ -14934,15 +15630,15 @@ let lstm_cell input ~hx ~w_ih ~w_hh ~b_ih ~b_hh =
 ;;
 
 let lstm_data
-  ~data
-  ~batch_sizes
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
+      ~data
+      ~batch_sizes
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_lstm_data
@@ -14967,24 +15663,24 @@ let lstm_data
 ;;
 
 let lstm_mps_backward
-  ~out0
-  ~out1
-  ~out2
-  ~grad_y
-  ~grad_hy
-  ~grad_cy
-  ~z_state
-  ~cell_state_fwd
-  input
-  ~layersoutputs
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      ~out0
+      ~out1
+      ~out2
+      ~grad_y
+      ~grad_hy
+      ~grad_cy
+      ~z_state
+      ~cell_state_fwd
+      input
+      ~layersoutputs
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let result =
     stubs_lstm_mps_backward
@@ -15218,13 +15914,13 @@ let max_pool2d self ~kernel_size ~stride ~padding ~dilation ~ceil_mode =
 ;;
 
 let max_pool2d_backward
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_max_pool2d_backward
     grad_output
@@ -15242,14 +15938,14 @@ let max_pool2d_backward
 ;;
 
 let max_pool2d_backward_out
-  ~out
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~out
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_max_pool2d_backward_out
     out
@@ -15287,14 +15983,14 @@ let max_pool2d_with_indices self ~kernel_size ~stride ~padding ~dilation ~ceil_m
 ;;
 
 let max_pool2d_with_indices_backward
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
-  ~indices
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
+      ~indices
   =
   stubs_max_pool2d_with_indices_backward
     grad_output
@@ -15313,15 +16009,15 @@ let max_pool2d_with_indices_backward
 ;;
 
 let max_pool2d_with_indices_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
-  ~indices
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
+      ~indices
   =
   stubs_max_pool2d_with_indices_backward_grad_input
     grad_input
@@ -15341,14 +16037,14 @@ let max_pool2d_with_indices_backward_grad_input
 ;;
 
 let max_pool2d_with_indices_out
-  ~out
-  ~indices
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~out
+      ~indices
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_max_pool2d_with_indices_out
@@ -15405,14 +16101,14 @@ let max_pool3d_with_indices self ~kernel_size ~stride ~padding ~dilation ~ceil_m
 ;;
 
 let max_pool3d_with_indices_backward
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
-  ~indices
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
+      ~indices
   =
   stubs_max_pool3d_with_indices_backward
     grad_output
@@ -15431,15 +16127,15 @@ let max_pool3d_with_indices_backward
 ;;
 
 let max_pool3d_with_indices_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
-  ~indices
+      ~grad_input
+      ~grad_output
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
+      ~indices
   =
   stubs_max_pool3d_with_indices_backward_grad_input
     grad_input
@@ -15459,14 +16155,14 @@ let max_pool3d_with_indices_backward_grad_input
 ;;
 
 let max_pool3d_with_indices_out
-  ~out
-  ~indices
-  self
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~out
+      ~indices
+      self
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_max_pool3d_with_indices_out
@@ -15654,14 +16350,14 @@ let minimum self other = stubs_minimum self other |> with_tensor_gc
 let minimum_out ~out self other = stubs_minimum_out out self other |> with_tensor_gc
 
 let miopen_batch_norm
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~exponential_average_factor
-  ~epsilon
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~exponential_average_factor
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_miopen_batch_norm
@@ -15687,14 +16383,14 @@ let miopen_batch_norm
 ;;
 
 let miopen_batch_norm_backward
-  input
-  ~grad_output
-  ~weight
-  ~running_mean
-  ~running_var
-  ~save_mean
-  ~save_var
-  ~epsilon
+      input
+      ~grad_output
+      ~weight
+      ~running_mean
+      ~running_var
+      ~save_mean
+      ~save_var
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_miopen_batch_norm_backward
@@ -15722,17 +16418,17 @@ let miopen_batch_norm_backward
 ;;
 
 let miopen_batch_norm_backward_out
-  ~out0
-  ~out1
-  ~out2
-  input
-  ~grad_output
-  ~weight
-  ~running_mean
-  ~running_var
-  ~save_mean
-  ~save_var
-  ~epsilon
+      ~out0
+      ~out1
+      ~out2
+      input
+      ~grad_output
+      ~weight
+      ~running_mean
+      ~running_var
+      ~save_mean
+      ~save_var
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_miopen_batch_norm_backward_out
@@ -15763,17 +16459,17 @@ let miopen_batch_norm_backward_out
 ;;
 
 let miopen_batch_norm_out
-  ~out0
-  ~out1
-  ~out2
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~exponential_average_factor
-  ~epsilon
+      ~out0
+      ~out1
+      ~out2
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~exponential_average_factor
+      ~epsilon
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_miopen_batch_norm_out
@@ -15802,15 +16498,15 @@ let miopen_batch_norm_out
 ;;
 
 let miopen_convolution
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_convolution
     self
@@ -15831,15 +16527,15 @@ let miopen_convolution
 ;;
 
 let miopen_convolution_add_relu
-  self
-  ~weight
-  ~z
-  ~alpha
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
-  ~groups
+      self
+      ~weight
+      ~z
+      ~alpha
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
+      ~groups
   =
   stubs_miopen_convolution_add_relu
     self
@@ -15860,16 +16556,16 @@ let miopen_convolution_add_relu
 ;;
 
 let miopen_convolution_out
-  ~out
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      ~out
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_convolution_out
     out
@@ -15908,16 +16604,16 @@ let miopen_convolution_relu self ~weight ~bias ~stride ~padding ~dilation ~group
 ;;
 
 let miopen_convolution_transpose
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_convolution_transpose
     self
@@ -15940,17 +16636,17 @@ let miopen_convolution_transpose
 ;;
 
 let miopen_convolution_transpose_out
-  ~out
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~output_padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      ~out
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~output_padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_convolution_transpose_out
     out
@@ -15973,16 +16669,96 @@ let miopen_convolution_transpose_out
   |> with_tensor_gc
 ;;
 
+let miopen_ctc_loss
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
+  =
+  let out__ = CArray.make raw_tensor 2 in
+  stubs_miopen_ctc_loss
+    (CArray.start out__)
+    log_probs
+    targets
+    (List.map Int64.of_int input_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length input_lengths)
+    (List.map Int64.of_int target_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length target_lengths)
+    (Int64.of_int blank)
+    (if deterministic then 1 else 0)
+    (if zero_infinity then 1 else 0);
+  let t0 = CArray.get out__ 0 |> with_tensor_gc in
+  let t1 = CArray.get out__ 1 |> with_tensor_gc in
+  t0, t1
+;;
+
+let miopen_ctc_loss_out
+      ~out0
+      ~out1
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
+  =
+  let out__ = CArray.make raw_tensor 2 in
+  stubs_miopen_ctc_loss_out
+    (CArray.start out__)
+    out0
+    out1
+    log_probs
+    targets
+    (List.map Int64.of_int input_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length input_lengths)
+    (List.map Int64.of_int target_lengths |> CArray.of_list int64_t |> CArray.start)
+    (List.length target_lengths)
+    (Int64.of_int blank)
+    (if deterministic then 1 else 0)
+    (if zero_infinity then 1 else 0);
+  let t0 = CArray.get out__ 0 |> with_tensor_gc in
+  let t1 = CArray.get out__ 1 |> with_tensor_gc in
+  t0, t1
+;;
+
+let miopen_ctc_loss_tensor
+      ~log_probs
+      ~targets
+      ~input_lengths
+      ~target_lengths
+      ~blank
+      ~deterministic
+      ~zero_infinity
+  =
+  let out__ = CArray.make raw_tensor 2 in
+  stubs_miopen_ctc_loss_tensor
+    (CArray.start out__)
+    log_probs
+    targets
+    input_lengths
+    target_lengths
+    (Int64.of_int blank)
+    (if deterministic then 1 else 0)
+    (if zero_infinity then 1 else 0);
+  let t0 = CArray.get out__ 0 |> with_tensor_gc in
+  let t1 = CArray.get out__ 1 |> with_tensor_gc in
+  t0, t1
+;;
+
 let miopen_depthwise_convolution
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_depthwise_convolution
     self
@@ -16003,16 +16779,16 @@ let miopen_depthwise_convolution
 ;;
 
 let miopen_depthwise_convolution_out
-  ~out
-  self
-  ~weight
-  ~bias
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~benchmark
-  ~deterministic
+      ~out
+      self
+      ~weight
+      ~bias
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~benchmark
+      ~deterministic
   =
   stubs_miopen_depthwise_convolution_out
     out
@@ -16034,20 +16810,20 @@ let miopen_depthwise_convolution_out
 ;;
 
 let miopen_rnn
-  input
-  ~weight
-  ~weight_stride0
-  ~hx
-  ~cx
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~batch_first
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~dropout_state
+      input
+      ~weight
+      ~weight_stride0
+      ~hx
+      ~cx
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~batch_first
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~dropout_state
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs_miopen_rnn
@@ -16082,25 +16858,25 @@ let miopen_rnn
 ;;
 
 let miopen_rnn_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~out4
-  input
-  ~weight
-  ~weight_stride0
-  ~hx
-  ~cx
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~batch_first
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~dropout_state
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~out4
+      input
+      ~weight
+      ~weight_stride0
+      ~hx
+      ~cx
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~batch_first
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~dropout_state
   =
   let out__ = CArray.make raw_tensor 5 in
   stubs_miopen_rnn_out
@@ -16251,12 +17027,12 @@ let mkldnn_linear_backward_weights ~grad_output input ~weight ~bias_defined =
 ;;
 
 let mkldnn_linear_backward_weights_out
-  ~out0
-  ~out1
-  ~grad_output
-  input
-  ~weight
-  ~bias_defined
+      ~out0
+      ~out1
+      ~grad_output
+      input
+      ~weight
+      ~bias_defined
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_mkldnn_linear_backward_weights_out
@@ -16299,14 +17075,14 @@ let mkldnn_max_pool2d self ~kernel_size ~stride ~padding ~dilation ~ceil_mode =
 ;;
 
 let mkldnn_max_pool2d_backward
-  ~grad_output
-  ~output
-  input
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~grad_output
+      ~output
+      input
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_mkldnn_max_pool2d_backward
     grad_output
@@ -16325,15 +17101,15 @@ let mkldnn_max_pool2d_backward
 ;;
 
 let mkldnn_max_pool2d_backward_out
-  ~out
-  ~grad_output
-  ~output
-  input
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~out
+      ~grad_output
+      ~output
+      input
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_mkldnn_max_pool2d_backward_out
     out
@@ -16384,14 +17160,14 @@ let mkldnn_max_pool3d self ~kernel_size ~stride ~padding ~dilation ~ceil_mode =
 ;;
 
 let mkldnn_max_pool3d_backward
-  ~grad_output
-  ~output
-  input
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~grad_output
+      ~output
+      input
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_mkldnn_max_pool3d_backward
     grad_output
@@ -16410,15 +17186,15 @@ let mkldnn_max_pool3d_backward
 ;;
 
 let mkldnn_max_pool3d_backward_out
-  ~out
-  ~grad_output
-  ~output
-  input
-  ~kernel_size
-  ~stride
-  ~padding
-  ~dilation
-  ~ceil_mode
+      ~out
+      ~grad_output
+      ~output
+      input
+      ~kernel_size
+      ~stride
+      ~padding
+      ~dilation
+      ~ceil_mode
   =
   stubs_mkldnn_max_pool3d_backward_out
     out
@@ -16473,13 +17249,13 @@ let mkldnn_reorder_conv2d_weight self ~padding ~stride ~dilation ~groups ~input_
 ;;
 
 let mkldnn_reorder_conv2d_weight_out
-  ~out
-  self
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~input_size
+      ~out
+      self
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~input_size
   =
   stubs_mkldnn_reorder_conv2d_weight_out
     out
@@ -16520,13 +17296,13 @@ let mkldnn_reorder_conv3d_weight self ~padding ~stride ~dilation ~groups ~input_
 ;;
 
 let mkldnn_reorder_conv3d_weight_out
-  ~out
-  self
-  ~padding
-  ~stride
-  ~dilation
-  ~groups
-  ~input_size
+      ~out
+      self
+      ~padding
+      ~stride
+      ~dilation
+      ~groups
+      ~input_size
   =
   stubs_mkldnn_reorder_conv3d_weight_out
     out
@@ -16548,22 +17324,22 @@ let mkldnn_reorder_conv3d_weight_out
 ;;
 
 let mkldnn_rnn_layer
-  input
-  ~weight0
-  ~weight1
-  ~weight2
-  ~weight3
-  ~hx_
-  ~cx_
-  ~reverse
-  ~batch_sizes
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~has_biases
-  ~bidirectional
-  ~batch_first
-  ~train
+      input
+      ~weight0
+      ~weight1
+      ~weight2
+      ~weight3
+      ~hx_
+      ~cx_
+      ~reverse
+      ~batch_sizes
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~has_biases
+      ~bidirectional
+      ~batch_first
+      ~train
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_mkldnn_rnn_layer
@@ -16593,29 +17369,29 @@ let mkldnn_rnn_layer
 ;;
 
 let mkldnn_rnn_layer_backward
-  input
-  ~weight1
-  ~weight2
-  ~weight3
-  ~weight4
-  ~hx_
-  ~cx_tmp
-  ~output
-  ~hy_
-  ~cy_
-  ~grad_output
-  ~grad_hy
-  ~grad_cy
-  ~reverse
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~has_biases
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~batch_first
-  ~workspace
+      input
+      ~weight1
+      ~weight2
+      ~weight3
+      ~weight4
+      ~hx_
+      ~cx_tmp
+      ~output
+      ~hy_
+      ~cy_
+      ~grad_output
+      ~grad_hy
+      ~grad_cy
+      ~reverse
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~has_biases
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~batch_first
+      ~workspace
   =
   let out__ = CArray.make raw_tensor 7 in
   stubs_mkldnn_rnn_layer_backward
@@ -16661,36 +17437,36 @@ let mkldnn_rnn_layer_backward
 ;;
 
 let mkldnn_rnn_layer_backward_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  ~out4
-  ~out5
-  ~out6
-  input
-  ~weight1
-  ~weight2
-  ~weight3
-  ~weight4
-  ~hx_
-  ~cx_tmp
-  ~output
-  ~hy_
-  ~cy_
-  ~grad_output
-  ~grad_hy
-  ~grad_cy
-  ~reverse
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~has_biases
-  ~train
-  ~bidirectional
-  ~batch_sizes
-  ~batch_first
-  ~workspace
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      ~out4
+      ~out5
+      ~out6
+      input
+      ~weight1
+      ~weight2
+      ~weight3
+      ~weight4
+      ~hx_
+      ~cx_tmp
+      ~output
+      ~hy_
+      ~cy_
+      ~grad_output
+      ~grad_hy
+      ~grad_cy
+      ~reverse
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~has_biases
+      ~train
+      ~bidirectional
+      ~batch_sizes
+      ~batch_first
+      ~workspace
   =
   let out__ = CArray.make raw_tensor 7 in
   stubs_mkldnn_rnn_layer_backward_out
@@ -16743,26 +17519,26 @@ let mkldnn_rnn_layer_backward_out
 ;;
 
 let mkldnn_rnn_layer_out
-  ~out0
-  ~out1
-  ~out2
-  ~out3
-  input
-  ~weight0
-  ~weight1
-  ~weight2
-  ~weight3
-  ~hx_
-  ~cx_
-  ~reverse
-  ~batch_sizes
-  ~mode
-  ~hidden_size
-  ~num_layers
-  ~has_biases
-  ~bidirectional
-  ~batch_first
-  ~train
+      ~out0
+      ~out1
+      ~out2
+      ~out3
+      input
+      ~weight0
+      ~weight1
+      ~weight2
+      ~weight3
+      ~hx_
+      ~cx_
+      ~reverse
+      ~batch_sizes
+      ~mode
+      ~hidden_size
+      ~num_layers
+      ~has_biases
+      ~bidirectional
+      ~batch_first
+      ~train
   =
   let out__ = CArray.make raw_tensor 4 in
   stubs_mkldnn_rnn_layer_out
@@ -16796,6 +17572,15 @@ let mkldnn_rnn_layer_out
 ;;
 
 let mm self ~mat2 = stubs_mm self mat2 |> with_tensor_gc
+
+let mm_dtype self ~mat2 ~out_dtype =
+  stubs_mm_dtype self mat2 (Kind.packed_to_int out_dtype) |> with_tensor_gc
+;;
+
+let mm_dtype_out ~out self ~mat2 ~out_dtype =
+  stubs_mm_dtype_out out self mat2 (Kind.packed_to_int out_dtype) |> with_tensor_gc
+;;
+
 let mm_out ~out self ~mat2 = stubs_mm_out out self mat2 |> with_tensor_gc
 
 let mode self ~dim ~keepdim =
@@ -16904,14 +17689,14 @@ let multi_margin_loss_backward ~grad_output self ~target ~p ~margin ~weight ~red
 ;;
 
 let multi_margin_loss_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~p
-  ~margin
-  ~weight
-  ~reduction
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~p
+      ~margin
+      ~weight
+      ~reduction
   =
   stubs_multi_margin_loss_backward_grad_input
     grad_input
@@ -16943,12 +17728,12 @@ let multilabel_margin_loss_backward ~grad_output self ~target ~reduction ~is_tar
 ;;
 
 let multilabel_margin_loss_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~reduction
-  ~is_target
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~reduction
+      ~is_target
   =
   stubs_multilabel_margin_loss_backward_grad_input
     grad_input
@@ -17224,14 +18009,14 @@ let narrow_tensor self ~dim ~start ~length =
 ;;
 
 let native_batch_norm
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_native_batch_norm
@@ -17259,17 +18044,17 @@ let native_batch_norm
 ;;
 
 let native_batch_norm_out
-  ~out
-  ~save_mean
-  ~save_invstd
-  input
-  ~weight
-  ~bias
-  ~running_mean
-  ~running_var
-  ~training
-  ~momentum
-  ~eps
+      ~out
+      ~save_mean
+      ~save_invstd
+      input
+      ~weight
+      ~bias
+      ~running_mean
+      ~running_var
+      ~training
+      ~momentum
+      ~eps
   =
   let out__ = CArray.make raw_tensor 3 in
   stubs_native_batch_norm_out
@@ -17615,13 +18400,13 @@ let nll_loss2d self ~target ~weight ~reduction ~ignore_index =
 ;;
 
 let nll_loss2d_backward
-  ~grad_output
-  self
-  ~target
-  ~weight
-  ~reduction
-  ~ignore_index
-  ~total_weight
+      ~grad_output
+      self
+      ~target
+      ~weight
+      ~reduction
+      ~ignore_index
+      ~total_weight
   =
   stubs_nll_loss2d_backward
     grad_output
@@ -17637,14 +18422,14 @@ let nll_loss2d_backward
 ;;
 
 let nll_loss2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~weight
-  ~reduction
-  ~ignore_index
-  ~total_weight
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~weight
+      ~reduction
+      ~ignore_index
+      ~total_weight
   =
   stubs_nll_loss2d_backward_grad_input
     grad_input
@@ -17674,13 +18459,13 @@ let nll_loss2d_out ~out self ~target ~weight ~reduction ~ignore_index =
 ;;
 
 let nll_loss_backward
-  ~grad_output
-  self
-  ~target
-  ~weight
-  ~reduction
-  ~ignore_index
-  ~total_weight
+      ~grad_output
+      self
+      ~target
+      ~weight
+      ~reduction
+      ~ignore_index
+      ~total_weight
   =
   stubs_nll_loss_backward
     grad_output
@@ -17696,14 +18481,14 @@ let nll_loss_backward
 ;;
 
 let nll_loss_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~weight
-  ~reduction
-  ~ignore_index
-  ~total_weight
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~weight
+      ~reduction
+      ~ignore_index
+      ~total_weight
   =
   stubs_nll_loss_backward_grad_input
     grad_input
@@ -17880,6 +18665,7 @@ let nuclear_norm_out ~out self ~keepdim =
   stubs_nuclear_norm_out out self (if keepdim then 1 else 0) |> with_tensor_gc
 ;;
 
+let numel self = stubs_numel self
 let numpy_t self = stubs_numpy_t self |> with_tensor_gc
 
 let one_hot self ~num_classes =
@@ -18296,14 +19082,14 @@ let quantize_per_tensor_tensors_out ~out tensors ~scales ~zero_points ~dtype =
 ;;
 
 let quantized_batch_norm
-  input
-  ~weight
-  ~bias
-  ~mean
-  ~var
-  ~eps
-  ~output_scale
-  ~output_zero_point
+      input
+      ~weight
+      ~bias
+      ~mean
+      ~var
+      ~eps
+      ~output_scale
+      ~output_zero_point
   =
   stubs_quantized_batch_norm
     input
@@ -18322,15 +19108,15 @@ let quantized_batch_norm
 ;;
 
 let quantized_batch_norm_out
-  ~out
-  input
-  ~weight
-  ~bias
-  ~mean
-  ~var
-  ~eps
-  ~output_scale
-  ~output_zero_point
+      ~out
+      input
+      ~weight
+      ~bias
+      ~mean
+      ~var
+      ~eps
+      ~output_scale
+      ~output_zero_point
   =
   stubs_quantized_batch_norm_out
     out
@@ -18350,20 +19136,20 @@ let quantized_batch_norm_out
 ;;
 
 let quantized_gru_cell
-  input
-  ~hx
-  ~w_ih
-  ~w_hh
-  ~b_ih
-  ~b_hh
-  ~packed_ih
-  ~packed_hh
-  ~col_offsets_ih
-  ~col_offsets_hh
-  ~scale_ih
-  ~scale_hh
-  ~zero_point_ih
-  ~zero_point_hh
+      input
+      ~hx
+      ~w_ih
+      ~w_hh
+      ~b_ih
+      ~b_hh
+      ~packed_ih
+      ~packed_hh
+      ~col_offsets_ih
+      ~col_offsets_hh
+      ~scale_ih
+      ~scale_hh
+      ~zero_point_ih
+      ~zero_point_hh
   =
   stubs_quantized_gru_cell
     input
@@ -18384,20 +19170,20 @@ let quantized_gru_cell
 ;;
 
 let quantized_lstm_cell
-  input
-  ~hx
-  ~w_ih
-  ~w_hh
-  ~b_ih
-  ~b_hh
-  ~packed_ih
-  ~packed_hh
-  ~col_offsets_ih
-  ~col_offsets_hh
-  ~scale_ih
-  ~scale_hh
-  ~zero_point_ih
-  ~zero_point_hh
+      input
+      ~hx
+      ~w_ih
+      ~w_hh
+      ~b_ih
+      ~b_hh
+      ~packed_ih
+      ~packed_hh
+      ~col_offsets_ih
+      ~col_offsets_hh
+      ~scale_ih
+      ~scale_hh
+      ~zero_point_ih
+      ~zero_point_hh
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_quantized_lstm_cell
@@ -18517,20 +19303,20 @@ let quantized_max_pool3d_out ~out self ~kernel_size ~stride ~padding ~dilation ~
 ;;
 
 let quantized_rnn_relu_cell
-  input
-  ~hx
-  ~w_ih
-  ~w_hh
-  ~b_ih
-  ~b_hh
-  ~packed_ih
-  ~packed_hh
-  ~col_offsets_ih
-  ~col_offsets_hh
-  ~scale_ih
-  ~scale_hh
-  ~zero_point_ih
-  ~zero_point_hh
+      input
+      ~hx
+      ~w_ih
+      ~w_hh
+      ~b_ih
+      ~b_hh
+      ~packed_ih
+      ~packed_hh
+      ~col_offsets_ih
+      ~col_offsets_hh
+      ~scale_ih
+      ~scale_hh
+      ~zero_point_ih
+      ~zero_point_hh
   =
   stubs_quantized_rnn_relu_cell
     input
@@ -18551,20 +19337,20 @@ let quantized_rnn_relu_cell
 ;;
 
 let quantized_rnn_tanh_cell
-  input
-  ~hx
-  ~w_ih
-  ~w_hh
-  ~b_ih
-  ~b_hh
-  ~packed_ih
-  ~packed_hh
-  ~col_offsets_ih
-  ~col_offsets_hh
-  ~scale_ih
-  ~scale_hh
-  ~zero_point_ih
-  ~zero_point_hh
+      input
+      ~hx
+      ~w_ih
+      ~w_hh
+      ~b_ih
+      ~b_hh
+      ~packed_ih
+      ~packed_hh
+      ~col_offsets_ih
+      ~col_offsets_hh
+      ~scale_ih
+      ~scale_hh
+      ~zero_point_ih
+      ~zero_point_hh
   =
   stubs_quantized_rnn_tanh_cell
     input
@@ -18634,6 +19420,12 @@ let randint_like_low_dtype_out ~out self ~low ~high =
 
 let randint_like_out ~out self ~high =
   stubs_randint_like_out out self (Int64.of_int high) |> with_tensor_gc
+;;
+
+let randint_like_tensor self ~high = stubs_randint_like_tensor self high |> with_tensor_gc
+
+let randint_like_tensor_out ~out self ~high =
+  stubs_randint_like_tensor_out out self high |> with_tensor_gc
 ;;
 
 let randint_low ~low ~high ~size ~options =
@@ -19196,15 +19988,15 @@ let rms_norm input ~normalized_shape ~weight ~eps =
 ;;
 
 let rnn_relu
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_rnn_relu
@@ -19241,15 +20033,15 @@ let rnn_relu_cell input ~hx ~w_ih ~w_hh ~b_ih ~b_hh =
 ;;
 
 let rnn_relu_data
-  ~data
-  ~batch_sizes
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
+      ~data
+      ~batch_sizes
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_rnn_relu_data
@@ -19271,15 +20063,15 @@ let rnn_relu_data
 ;;
 
 let rnn_tanh
-  input
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
-  ~batch_first
+      input
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
+      ~batch_first
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_rnn_tanh
@@ -19316,15 +20108,15 @@ let rnn_tanh_cell input ~hx ~w_ih ~w_hh ~b_ih ~b_hh =
 ;;
 
 let rnn_tanh_data
-  ~data
-  ~batch_sizes
-  ~hx
-  ~params
-  ~has_biases
-  ~num_layers
-  ~dropout
-  ~train
-  ~bidirectional
+      ~data
+      ~batch_sizes
+      ~hx
+      ~params
+      ~has_biases
+      ~num_layers
+      ~dropout
+      ~train
+      ~bidirectional
   =
   let out__ = CArray.make raw_tensor 2 in
   stubs_rnn_tanh_data
@@ -19483,13 +20275,13 @@ let rrelu_with_noise_ ?lower ?upper self ~noise ~training =
 ;;
 
 let rrelu_with_noise_backward
-  ~grad_output
-  self
-  ~noise
-  ~lower
-  ~upper
-  ~training
-  ~self_is_result
+      ~grad_output
+      self
+      ~noise
+      ~lower
+      ~upper
+      ~training
+      ~self_is_result
   =
   stubs_rrelu_with_noise_backward
     grad_output
@@ -19503,14 +20295,14 @@ let rrelu_with_noise_backward
 ;;
 
 let rrelu_with_noise_backward_out
-  ~out
-  ~grad_output
-  self
-  ~noise
-  ~lower
-  ~upper
-  ~training
-  ~self_is_result
+      ~out
+      ~grad_output
+      self
+      ~noise
+      ~lower
+      ~upper
+      ~training
+      ~self_is_result
   =
   stubs_rrelu_with_noise_backward_out
     out
@@ -19611,14 +20403,14 @@ let scalar_tensor ~s ~options =
 let scalar_tensor_out ~out ~s = stubs_scalar_tensor_out out s |> with_tensor_gc
 
 let scaled_dot_product_attention
-  ~query
-  ~key
-  ~value
-  ~attn_mask
-  ~dropout_p
-  ~is_causal
-  ~scale
-  ~enable_gqa
+      ~query
+      ~key
+      ~value
+      ~attn_mask
+      ~dropout_p
+      ~is_causal
+      ~scale
+      ~enable_gqa
   =
   stubs_scaled_dot_product_attention
     query
@@ -19784,15 +20576,15 @@ let segment_reduce ~data ~reduce ~lengths ~indices ~offsets ~axis ~unsafe ~initi
 ;;
 
 let segment_reduce_out
-  ~out
-  ~data
-  ~reduce
-  ~lengths
-  ~indices
-  ~offsets
-  ~axis
-  ~unsafe
-  ~initial
+      ~out
+      ~data
+      ~reduce
+      ~lengths
+      ~indices
+      ~offsets
+      ~axis
+      ~unsafe
+      ~initial
   =
   stubs_segment_reduce_out
     out
@@ -20149,14 +20941,14 @@ let slow_conv_dilated2d self ~weight ~kernel_size ~bias ~stride ~padding ~dilati
 ;;
 
 let slow_conv_dilated2d_out
-  ~out
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
+      ~out
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
   =
   stubs_slow_conv_dilated2d_out
     out
@@ -20195,14 +20987,14 @@ let slow_conv_dilated3d self ~weight ~kernel_size ~bias ~stride ~padding ~dilati
 ;;
 
 let slow_conv_dilated3d_out
-  ~out
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~dilation
+      ~out
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~dilation
   =
   stubs_slow_conv_dilated3d_out
     out
@@ -20223,14 +21015,14 @@ let slow_conv_dilated3d_out
 ;;
 
 let slow_conv_transpose2d
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~dilation
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~dilation
   =
   stubs_slow_conv_transpose2d
     self
@@ -20252,15 +21044,15 @@ let slow_conv_transpose2d
 ;;
 
 let slow_conv_transpose2d_out
-  ~out
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~dilation
+      ~out
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~dilation
   =
   stubs_slow_conv_transpose2d_out
     out
@@ -20283,14 +21075,14 @@ let slow_conv_transpose2d_out
 ;;
 
 let slow_conv_transpose3d
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~dilation
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~dilation
   =
   stubs_slow_conv_transpose3d
     self
@@ -20312,15 +21104,15 @@ let slow_conv_transpose3d
 ;;
 
 let slow_conv_transpose3d_out
-  ~out
-  self
-  ~weight
-  ~kernel_size
-  ~bias
-  ~stride
-  ~padding
-  ~output_padding
-  ~dilation
+      ~out
+      self
+      ~weight
+      ~kernel_size
+      ~bias
+      ~stride
+      ~padding
+      ~output_padding
+      ~dilation
   =
   stubs_slow_conv_transpose3d_out
     out
@@ -20360,12 +21152,12 @@ let smooth_l1_loss_backward ~grad_output self ~target ~reduction ~beta =
 ;;
 
 let smooth_l1_loss_backward_grad_input
-  ~grad_input
-  ~grad_output
-  self
-  ~target
-  ~reduction
-  ~beta
+      ~grad_input
+      ~grad_output
+      self
+      ~target
+      ~reduction
+      ~beta
   =
   stubs_smooth_l1_loss_backward_grad_input
     grad_input
@@ -20547,11 +21339,11 @@ let sparse_bsc_tensor ~ccol_indices ~row_indices ~values ~options =
 ;;
 
 let sparse_bsc_tensor_ccol_row_value_size
-  ~ccol_indices
-  ~row_indices
-  ~values
-  ~size
-  ~options
+      ~ccol_indices
+      ~row_indices
+      ~values
+      ~size
+      ~options
   =
   stubs_sparse_bsc_tensor_ccol_row_value_size
     ccol_indices
@@ -20575,11 +21367,11 @@ let sparse_bsr_tensor ~crow_indices ~col_indices ~values ~options =
 ;;
 
 let sparse_bsr_tensor_crow_col_value_size
-  ~crow_indices
-  ~col_indices
-  ~values
-  ~size
-  ~options
+      ~crow_indices
+      ~col_indices
+      ~values
+      ~size
+      ~options
   =
   stubs_sparse_bsr_tensor_crow_col_value_size
     crow_indices
@@ -20603,11 +21395,11 @@ let sparse_compressed_tensor ~compressed_indices ~plain_indices ~values ~options
 ;;
 
 let sparse_compressed_tensor_comp_plain_value_size
-  ~compressed_indices
-  ~plain_indices
-  ~values
-  ~size
-  ~options
+      ~compressed_indices
+      ~plain_indices
+      ~values
+      ~size
+      ~options
   =
   stubs_sparse_compressed_tensor_comp_plain_value_size
     compressed_indices
@@ -20670,11 +21462,11 @@ let sparse_csc_tensor ~ccol_indices ~row_indices ~values ~options =
 ;;
 
 let sparse_csc_tensor_ccol_row_value_size
-  ~ccol_indices
-  ~row_indices
-  ~values
-  ~size
-  ~options
+      ~ccol_indices
+      ~row_indices
+      ~values
+      ~size
+      ~options
   =
   stubs_sparse_csc_tensor_ccol_row_value_size
     ccol_indices
@@ -20698,11 +21490,11 @@ let sparse_csr_tensor ~crow_indices ~col_indices ~values ~options =
 ;;
 
 let sparse_csr_tensor_crow_col_value_size
-  ~crow_indices
-  ~col_indices
-  ~values
-  ~size
-  ~options
+      ~crow_indices
+      ~col_indices
+      ~values
+      ~size
+      ~options
   =
   stubs_sparse_csr_tensor_crow_col_value_size
     crow_indices
@@ -21675,15 +22467,15 @@ let std_out ~out self ~dim ~unbiased ~keepdim =
 ;;
 
 let stft
-  self
-  ~n_fft
-  ~hop_length
-  ~win_length
-  ~window
-  ~normalized
-  ~onesided
-  ~return_complex
-  ~align_to_window
+      self
+      ~n_fft
+      ~hop_length
+      ~win_length
+      ~window
+      ~normalized
+      ~onesided
+      ~return_complex
+      ~align_to_window
   =
   stubs_stft
     self
@@ -21711,17 +22503,17 @@ let stft
 ;;
 
 let stft_center
-  self
-  ~n_fft
-  ~hop_length
-  ~win_length
-  ~window
-  ~center
-  ~pad_mode
-  ~normalized
-  ~onesided
-  ~return_complex
-  ~align_to_window
+      self
+      ~n_fft
+      ~hop_length
+      ~win_length
+      ~window
+      ~center
+      ~pad_mode
+      ~normalized
+      ~onesided
+      ~return_complex
+      ~align_to_window
   =
   stubs_stft_center
     self
@@ -21750,6 +22542,7 @@ let stft_center
   |> with_tensor_gc
 ;;
 
+let storage_offset self = stubs_storage_offset self
 let stride self ~dim = stubs_stride self (Int64.of_int dim)
 
 let sub ?alpha self other =
@@ -22604,12 +23397,12 @@ let upsample_bicubic2d self ~output_size ~align_corners ~scales_h ~scales_w =
 ;;
 
 let upsample_bicubic2d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_bicubic2d_backward
     grad_output
@@ -22630,13 +23423,13 @@ let upsample_bicubic2d_backward
 ;;
 
 let upsample_bicubic2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_bicubic2d_backward_grad_input
     grad_input
@@ -22708,12 +23501,12 @@ let upsample_bilinear2d self ~output_size ~align_corners ~scales_h ~scales_w =
 ;;
 
 let upsample_bilinear2d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_bilinear2d_backward
     grad_output
@@ -22734,13 +23527,13 @@ let upsample_bilinear2d_backward
 ;;
 
 let upsample_bilinear2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_bilinear2d_backward_grad_input
     grad_input
@@ -22824,11 +23617,11 @@ let upsample_linear1d self ~output_size ~align_corners ~scales =
 ;;
 
 let upsample_linear1d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales
   =
   stubs_upsample_linear1d_backward
     grad_output
@@ -22845,12 +23638,12 @@ let upsample_linear1d_backward
 ;;
 
 let upsample_linear1d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales
   =
   stubs_upsample_linear1d_backward_grad_input
     grad_input
@@ -22923,11 +23716,11 @@ let upsample_nearest1d_backward ~grad_output ~output_size ~input_size ~scales =
 ;;
 
 let upsample_nearest1d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales
   =
   stubs_upsample_nearest1d_backward_grad_input
     grad_input
@@ -23005,12 +23798,12 @@ let upsample_nearest2d_backward ~grad_output ~output_size ~input_size ~scales_h 
 ;;
 
 let upsample_nearest2d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_nearest2d_backward_grad_input
     grad_input
@@ -23097,12 +23890,12 @@ let upsample_nearest3d self ~output_size ~scales_d ~scales_h ~scales_w =
 ;;
 
 let upsample_nearest3d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_nearest3d_backward
     grad_output
@@ -23126,13 +23919,13 @@ let upsample_nearest3d_backward
 ;;
 
 let upsample_nearest3d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_nearest3d_backward_grad_input
     grad_input
@@ -23213,13 +24006,13 @@ let upsample_trilinear3d self ~output_size ~align_corners ~scales_d ~scales_h ~s
 ;;
 
 let upsample_trilinear3d_backward
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_trilinear3d_backward
     grad_output
@@ -23244,14 +24037,14 @@ let upsample_trilinear3d_backward
 ;;
 
 let upsample_trilinear3d_backward_grad_input
-  ~grad_input
-  ~grad_output
-  ~output_size
-  ~input_size
-  ~align_corners
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~grad_input
+      ~grad_output
+      ~output_size
+      ~input_size
+      ~align_corners
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_trilinear3d_backward_grad_input
     grad_input
@@ -23277,13 +24070,13 @@ let upsample_trilinear3d_backward_grad_input
 ;;
 
 let upsample_trilinear3d_out
-  ~out
-  self
-  ~output_size
-  ~align_corners
-  ~scales_d
-  ~scales_h
-  ~scales_w
+      ~out
+      self
+      ~output_size
+      ~align_corners
+      ~scales_d
+      ~scales_h
+      ~scales_w
   =
   stubs_upsample_trilinear3d_out
     out

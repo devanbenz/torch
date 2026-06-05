@@ -159,7 +159,7 @@ let%expect_test "Trying to use with_scope_tensors at the top level warns" =
            [%expect {| |}];
            [ Tensor.zeros [ 1 ]; Tensor.ones [ 1 ] ])
        in
-       Torch_local_iterators.List.iter_local ts ~f:Tensor.print [@nontail]
+       (Torch_local_iterators.List.iter_local ts ~f:Tensor.print [@nontail])
      with
      | exn -> print_endline (Exn.to_string exn));
     [%expect

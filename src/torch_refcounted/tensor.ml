@@ -24,9 +24,9 @@ let no_grad_ t ~f =
     if requires_grad t
     then (
       let t = set_requires_grad t ~r:false in
-      Exn.protect
-        ~f:(fun () -> f t)
-        ~finally:(fun () -> ignore (set_requires_grad t ~r:true : t)) [@nontail])
+      (Exn.protect
+         ~f:(fun () -> f t)
+         ~finally:(fun () -> ignore (set_requires_grad t ~r:true : t)) [@nontail]))
     else f t)
   [@nontail]
 ;;
@@ -66,12 +66,12 @@ let to_device ?device t =
 let float_vec ?kind ?device dims = float_vec ?kind dims |> to_device ?device
 
 let gen
-  ~f
-  ?(requires_grad = false)
-  ?(kind = Kind.(T Float))
-  ?(device = Device.Cpu)
-  ?scale
-  size
+      ~f
+      ?(requires_grad = false)
+      ?(kind = Kind.(T Float))
+      ?(device = Device.Cpu)
+      ?scale
+      size
   =
   let t = f ~size ~options:(kind, device) in
   let t =
@@ -117,14 +117,14 @@ let conv2d ?(padding = 0, 0) ?(dilation = 1, 1) ?(groups = 1) input weight bias 
 ;;
 
 let conv_transpose2d
-  ?(output_padding = 0, 0)
-  ?(padding = 0, 0)
-  ?(dilation = 1, 1)
-  ?(groups = 1)
-  input
-  weight
-  bias
-  ~stride
+      ?(output_padding = 0, 0)
+      ?(padding = 0, 0)
+      ?(dilation = 1, 1)
+      ?(groups = 1)
+      input
+      weight
+      bias
+      ~stride
   =
   conv_transpose2d
     input
@@ -138,12 +138,12 @@ let conv_transpose2d
 ;;
 
 let max_pool2d
-  ?(padding = 0, 0)
-  ?(dilation = 1, 1)
-  ?(ceil_mode = false)
-  ?stride
-  self
-  ~ksize
+      ?(padding = 0, 0)
+      ?(dilation = 1, 1)
+      ?(ceil_mode = false)
+      ?stride
+      self
+      ~ksize
   =
   max_pool2d
     self
@@ -155,13 +155,13 @@ let max_pool2d
 ;;
 
 let avg_pool2d
-  ?(padding = 0, 0)
-  ?(count_include_pad = false)
-  ?(ceil_mode = false)
-  ?stride
-  ?divisor_override
-  self
-  ~ksize
+      ?(padding = 0, 0)
+      ?(count_include_pad = false)
+      ?(ceil_mode = false)
+      ?stride
+      ?divisor_override
+      self
+      ~ksize
   =
   avg_pool2d
     self
