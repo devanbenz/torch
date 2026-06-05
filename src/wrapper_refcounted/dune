@@ -7,7 +7,6 @@
    -fPIC
    (:include cxx_flags.sexp)))
  (name torch_refcounted_core)
- (public_name torch.refcounted.core)
  (c_library_flags :standard -lstdc++)
  (flags
   :standard
